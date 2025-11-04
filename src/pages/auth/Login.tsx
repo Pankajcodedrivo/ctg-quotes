@@ -3,6 +3,7 @@ import rightArrow from "../../assets/images/right-arrow.svg"
 import LeftPanel from "../../components/LeftPanel";
 import SubFooter from "../../components/SubFooter";
 import SubHeader from "../../components/SubHeader";
+import eye from "../../assets/images/eye-off.svg"
 
 const Login = () => {
     return (
@@ -27,7 +28,12 @@ const Login = () => {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <label className="form-label float">Password *</label>
-                                        <input type="password" className="form-control" id="password" placeholder="Enter password" name="password" />
+                                        <div className="password">
+                                            <input type="password" className="form-control" placeholder="Enter Password" />
+                                            <span className="password-icon">
+                                                <img src={eye} alt="" />
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -38,10 +44,10 @@ const Login = () => {
                                 </label>
                                 <Link to="/" className="forgot-password">Forgot Password?</Link>
                             </div>
-                            <div className="text-center">
-                                <Link to="/" className="btn btn-primary">Login <span><img src={rightArrow} alt="" /></span></Link>
-                            </div>
                         </form>
+                    </div>
+                    <div className="text-center mt-40">
+                        <Link to="/" className="btn btn-primary">Login <span><img src={rightArrow} alt="" /></span></Link>
                     </div>
                 </div>
                 <SubFooter />
