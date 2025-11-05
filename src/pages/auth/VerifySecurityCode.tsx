@@ -11,8 +11,8 @@ const Login = () => {
             <div className="right-panel">
                 <div className="form-top">
                     <SubHeader />
-                    <div className="auth-form">
-                        <form action="">
+                    <form action="">
+                        <div className="auth-form">
                             <div className="mb-40">
                                 <h4>Enter Security Code</h4>
                                 <p>Check your email for the 4-digit security code and enter it below to continue.</p>
@@ -30,15 +30,15 @@ const Login = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="text-center">
-                                <Link to="/" className="btn btn-primary">Send Security Code <span><img src={rightArrow} alt="" /></span></Link>
-                            </div>
                             <ul className="resend-code">
                                 <li><Link to="/">Resend Code</Link></li>
                                 <li><Link to="/">Get Help</Link></li>
                             </ul>
-                        </form>
-                    </div>
+                        </div>
+                        <div className="text-center mt-40">
+                            <Link to="/" className="btn btn-primary">Send Security Code <span><img src={rightArrow} alt="" /></span></Link>
+                        </div>
+                    </form>
                 </div>
                 <SubFooter />
             </div>

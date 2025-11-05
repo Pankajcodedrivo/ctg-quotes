@@ -12,20 +12,20 @@ const Login = () => {
             <div className="right-panel">
                 <div className="form-top">
                     <SubHeader />
-                    <div className="auth-form">
-                        <form action="">
+                    <form action="">
+                        <div className="auth-form">
                             <div className="mb-40">
                                 <h4>Welcome Back!</h4>
                                 <p>Enter your email and password to access your account.</p>
                             </div>
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-lg-6">
                                     <div className="form-group">
                                         <label className="form-label float">Email Address *</label>
                                         <input type="email" className="form-control" id="email" placeholder="Enter Email" name="email" />
                                     </div>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-lg-6">
                                     <div className="form-group">
                                         <label className="form-label float">Password *</label>
                                         <div className="password">
@@ -44,11 +44,11 @@ const Login = () => {
                                 </label>
                                 <Link to="/" className="forgot-password">Forgot Password?</Link>
                             </div>
-                        </form>
-                    </div>
-                    <div className="text-center mt-40">
-                        <Link to="/" className="btn btn-primary">Login <span><img src={rightArrow} alt="" /></span></Link>
-                    </div>
+                        </div>
+                        <div className="text-center mt-40">
+                            <Link to="/" className="btn btn-primary">Login <span><img src={rightArrow} alt="" /></span></Link>
+                        </div>
+                    </form>
                 </div>
                 <SubFooter />
             </div>

@@ -133,7 +133,17 @@ input.form-control:focus {
     line-height: 0.8;
     font-weight: 600;
     transition: all 0.5s;
-
+    @media only screen and (max-width: 1680px) {
+        padding: 20px 30px;
+    }
+    @media only screen and (max-width:767px) {
+        font-size: 14px;
+        padding: 17px 22px;
+    }
+    @media only screen and (max-width:574px) {
+        font-size: 13px;
+        padding: 14px 14px;
+    }
     &.btn-primary {
         background: var(--color-7bf);
         color: var(--color-white);
@@ -163,7 +173,10 @@ input.form-control:focus {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
+    @media only screen and (max-width:575px) {
+        padding-left: 21px;
+        font-size: 13px;
+    }
     input {
         position: absolute;
         opacity: 0;
@@ -215,6 +228,10 @@ input.form-control:focus {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  @media only screen and (max-width: 575px) {
+    font-size: 12px;
+    padding-left: 24px;
+  }
   input {
   position: absolute;
   opacity: 0;
@@ -229,6 +246,10 @@ input.form-control:focus {
   background-color: transparent;
   border: 1px solid var(--color-d9);
   border-radius: 50%;
+  @media only screen and (max-width: 575px) {
+    width: 15px;
+    height: 15px;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -242,6 +263,10 @@ input.form-control:focus {
     height: 10px;
     border-radius: 50%;
     background:  var(--color-7bf);
+    @media only screen and (max-width: 575px) {
+        width: 9px;
+        height: 9px;
+    }
 }
 }
 input:checked ~ .checkmark {
@@ -255,12 +280,21 @@ input:checked ~ .checkmark:after {
 
 .mb-40 {
     margin-bottom: 40px;
+    @media only screen and (max-width: 1399px) {
+        margin-bottom: 25px;
+    }
 }
 .form-label {
     color: var(--color-3d);
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 16px;
+    @media only screen and (max-width: 1399px) {
+        font-size: 14px;
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 13px;
+    }
     span {
         font-style: italic;
         font-weight: 400;
@@ -277,6 +311,14 @@ input:checked ~ .checkmark:after {
         font-weight: 600;
         font-size: 14px;
         z-index: 1;
+        @media only screen and (max-width: 1399px) {
+            font-size: 12px;
+        }
+        @media only screen and (max-width: 767px) {
+            position: static;
+            margin: 0 0 10px;
+            padding: 0;
+        }
     }
 }
 .hg {
@@ -287,6 +329,9 @@ input:checked ~ .checkmark:after {
     }
     .form-control {
         height: 78px;
+        @media only screen and (max-width: 767px) {
+            height: 50px;
+        }
     }
 }
 textarea {
@@ -294,6 +339,12 @@ textarea {
         height: 90px;
         padding-top: 24px;
         font-size: 14px;
+        @media only screen and (max-width: 1399px) {
+            padding-top: 10px;
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 12px;
+        }
     }
 }
 select {
@@ -317,6 +368,16 @@ select {
     font-size: 18px;
     font-weight: 500;
     color: var(--color-black);
+    @media only screen and (max-width: 1680px) {
+        font-size: 16px;
+    }
+    @media only screen and (max-width: 1399px) {
+        font-size: 15px;
+        height: 50px;
+    }
+    @media only screen and (max-width: 575px) {
+        font-size: 12px;
+    }
     &:focus {
         box-shadow: none;
     }
@@ -327,6 +388,20 @@ select {
 
 .form-group {
     margin-bottom: 24px;
+    @media only screen and (max-width: 1399px) {
+        margin-bottom: 17px;
+    }
+    @media only screen and (max-width: 991px) {
+        margin-bottom: 10px;
+    }
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 20px;
+    }
+    &.mb-0 {
+        @media only screen and (max-width: 575px) {
+        margin-bottom: 20px!important;
+    }
+    }
 }
 .container {
     @media (min-width:1400px) {
@@ -377,4 +452,15 @@ select {
 }
 .mt-40 {
     margin-top: 40px;
+    @media only screen and (max-width: 1399px) {
+        margin-top: 30px;
+    }
+    @media only screen and (max-width: 575px) {
+        margin-top: 20px;
+    }
+}
+.mb-4 {
+    @media only screen and (max-width: 575px) {
+        margin-bottom: 1rem!important;
+    }
 }

@@ -11,25 +11,25 @@ const Login = () => {
             <div className="right-panel">
                 <div className="form-top">
                     <SubHeader />
-                    <div className="auth-form">
-                        <form action="">
+                    <form action="">
+                        <div className="auth-form">
                             <div className="mb-40">
                                 <h4>Security Code</h4>
                                 <p>We’ve sent a security code to your email address. Please check your inbox and enter the code below to continue.</p>
                             </div>
                             <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group">
+                                <div className="col-lg-6">
+                                    <div className="form-group mb-0">
                                         <label className="form-label float">Email Address *</label>
                                         <input type="email" className="form-control" id="email" placeholder="Enter Email" name="email" />
                                     </div>
                                 </div>
                             </div>
-                            <div className="text-center">
-                                <Link to="/" className="btn btn-primary">Send Security Code <span><img src={rightArrow} alt="" /></span></Link>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div className="text-center mt-40">
+                            <Link to="/" className="btn btn-primary">Send Security Code <span><img src={rightArrow} alt="" /></span></Link>
+                        </div>
+                    </form>
                 </div>
                 <SubFooter />
             </div>

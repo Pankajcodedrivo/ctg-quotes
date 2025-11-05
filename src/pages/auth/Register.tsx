@@ -13,10 +13,31 @@ import eicon4 from "../../assets/images/e-icon-4.svg"
 import eicon5 from "../../assets/images/e-icon-5.svg"
 import eicon6 from "../../assets/images/e-icon-6.svg"
 import edit from "../../assets/images/edit.svg"
+import drawIcon from "../../assets/images/draw-icon.svg"
+import sign from "../../assets/images/sign.png"
+import Icon2 from "../../assets/images/icon-2.svg"
+import Icon3 from "../../assets/images/icon-3.svg"
+import Icon4 from "../../assets/images/icon-4.svg"
+import Icon5 from "../../assets/images/icon-5.svg"
+import Icon6 from "../../assets/images/icon-6.svg"
 const Register = () => {
     return (
         <section className="auth-wrapper">
+            {/* Personal Information */}
             <LeftPanelRegister title="Personal Information" img={infoIcon} />
+            {/* Location */}
+            {/* <LeftPanelRegister title="Location" img={Icon2} /> */}
+            {/* Property & Vehicle Details */}
+            {/* <LeftPanelRegister title="Property & Vehicle Details" img={Icon3} /> */}
+            {/* What Would You Like to Explore? */}
+            {/* <LeftPanelRegister title="What Would You Like to Explore?" img={infoIcon} /> */}
+            {/*  Insurance History */}
+            {/* <LeftPanelRegister title=" Insurance History" img={Icon4} /> */}
+            {/* Family Circle */}
+            {/* <LeftPanelRegister title="Family Circle" img={Icon5} /> */}
+            {/* Review & Consent */}
+            {/* <LeftPanelRegister title="Review & Consent" img={Icon6} /> */}
+
             <div className="right-panel">
                 <div className="form-top">
                     <SubHeader />
@@ -59,28 +80,28 @@ const Register = () => {
                                     <h4>Let’s Get Started</h4>
                                 </div>
                                 <div className="row">
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">First Name <span>(as it appears on Driver License)*</span></label>
                                             <input type="text" className="form-control" placeholder="Enter Name" />
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">Last Name <span>(as it appears on Driver License)*</span></label>
                                             <input type="text" className="form-control" placeholder="Enter Name" />
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">Birthday <span>(DOB)*</span></label>
                                             <input type="date" className="form-control" placeholder="Select DOB" />
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <p className="form-txt">You must be 18 or older to create an account. If you’re under 18, please have the main insured add you manually.</p>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group mb-0">
                                             <label className="form-label float">Marital Status</label>
                                             <select name="" id="" className="form-control">
@@ -90,7 +111,7 @@ const Register = () => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group mb-0">
                                             <label className="form-label float">Gender <span>(as it appears on Driver License)*</span></label>
                                             <select name="" id="" className="form-control">
@@ -107,7 +128,7 @@ const Register = () => {
                                     <h4>Driver Licence Information</h4>
                                 </div>
                                 <div className="row">
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">What kind of driver’s license do you have?*</label>
                                             <select name="" id="" className="form-control">
@@ -117,7 +138,7 @@ const Register = () => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">How many years have you been licensed?*</label>
                                             <select name="" id="" className="form-control">
@@ -127,7 +148,7 @@ const Register = () => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-lg-6">
                                         <div className="form-group">
                                             <label className="form-label float">Driver’s License State *</label>
                                             <select name="" id="" className="form-control">
@@ -137,7 +158,7 @@ const Register = () => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-lg-6">
                                         <div className="form-group">
                                             <label className="form-label float">Driver’s Licence Number *</label>
                                             <input type="text" className="form-control" placeholder="Enter Number" />
@@ -167,7 +188,7 @@ const Register = () => {
                                     <h4>Login & Contact Information</h4>
                                 </div>
                                 <div className="row">
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">Email Address *</label>
                                             <div className="verify-innr">
@@ -176,7 +197,7 @@ const Register = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">Phone Number *</label>
                                             <div className="verify-innr">
@@ -185,7 +206,7 @@ const Register = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group mb-0">
                                             <label className="form-label float">Create Password *</label>
                                             <div className="password">
@@ -196,7 +217,7 @@ const Register = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-xl-6">
                                         <div className="form-group mb-0">
                                             <label className="form-label float">Re-enter Password*</label>
                                             <div className="password">
@@ -224,13 +245,13 @@ const Register = () => {
                                             <input type="text" className="form-control" placeholder="Enter Name" />
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-lg-6">
                                         <div className="form-group">
                                             <label className="form-label float">Unit/Apt <span> (optional)</span></label>
                                             <input type="text" className="form-control" placeholder="Enter" />
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-lg-6">
                                         <div className="form-group mb-0">
                                             <label className="form-label float">State*</label>
                                             <select name="" id="" className="form-control">
@@ -240,7 +261,7 @@ const Register = () => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-lg-6">
                                         <div className="form-group">
                                             <label className="form-label float">City *</label>
                                             <select name="" id="" className="form-control">
@@ -250,7 +271,7 @@ const Register = () => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-lg-6">
                                         <div className="form-group">
                                             <label className="form-label float">City *</label>
                                             <select name="" id="" className="form-control">
@@ -440,7 +461,7 @@ const Register = () => {
                         {/* step 4 What Would You Like to Explore? */}
                         <div className="auth-form">
                             <div className="row g-3">
-                                <div className="col-md-4 explore-otr">
+                                <div className="col-xl-4 col-md-6 explore-otr">
                                     <label className="checkbox-container">
                                         <input type="checkbox" />
                                         <span className="explore-innr">
@@ -449,7 +470,7 @@ const Register = () => {
                                         </span>
                                     </label>
                                 </div>
-                                <div className="col-md-4 explore-otr">
+                                <div className="col-xl-4 col-md-6 explore-otr">
                                     <label className="checkbox-container">
                                         <input type="checkbox" />
                                         <span className="explore-innr">
@@ -458,7 +479,7 @@ const Register = () => {
                                         </span>
                                     </label>
                                 </div>
-                                <div className="col-md-4 explore-otr">
+                                <div className="col-xl-4 col-md-6 explore-otr">
                                     <label className="checkbox-container">
                                         <input type="checkbox" />
                                         <span className="explore-innr">
@@ -467,7 +488,7 @@ const Register = () => {
                                         </span>
                                     </label>
                                 </div>
-                                <div className="col-md-4 explore-otr">
+                                <div className="col-xl-4 col-md-6 explore-otr">
                                     <label className="checkbox-container">
                                         <input type="checkbox" />
                                         <span className="explore-innr">
@@ -476,7 +497,7 @@ const Register = () => {
                                         </span>
                                     </label>
                                 </div>
-                                <div className="col-md-4 explore-otr">
+                                <div className="col-xl-4 col-md-6 explore-otr">
                                     <label className="checkbox-container">
                                         <input type="checkbox" />
                                         <span className="explore-innr">
@@ -485,7 +506,7 @@ const Register = () => {
                                         </span>
                                     </label>
                                 </div>
-                                <div className="col-md-4 explore-otr">
+                                <div className="col-xl-4 col-md-6 explore-otr">
                                     <label className="checkbox-container">
                                         <input type="checkbox" />
                                         <span className="explore-innr">
@@ -694,13 +715,13 @@ const Register = () => {
                                 <div className="col-md-12">
                                     <div className="inner-auth-form mb-4">
                                         <div className="row">
-                                            <div className="col-md-6">
+                                            <div className="col-lg-6">
                                                 <div className="form-group">
                                                     <label className="form-label float">Full Name*</label>
                                                     <input type="text" className="form-control" placeholder="Enter Name" />
                                                 </div>
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-lg-6">
                                                 <div className="form-group">
                                                     <label className="form-label float">Relationship to you *</label>
                                                     <select name="" id="" className="form-control">
@@ -824,13 +845,13 @@ const Register = () => {
                                 <div className="col-md-12 mb-40">
                                     <div className="inner-auth-form">
                                         <div className="row">
-                                            <div className="col-md-6">
+                                            <div className="col-lg-6">
                                                 <div className="form-group">
                                                     <label className="form-label float">Full Name*</label>
                                                     <input type="text" className="form-control" placeholder="Enter Name" />
                                                 </div>
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-lg-6">
                                                 <div className="form-group">
                                                     <label className="form-label float">Relationship to you *</label>
                                                     <select name="" id="" className="form-control">
@@ -911,9 +932,9 @@ const Register = () => {
                                     <a className="nav-link" data-bs-toggle="tab" href="#sign-consent">Sign Consent</a>
                                 </li>
                             </ul>
-                            <div className="auth-form-innr">
-                                <div className="tab-content">
-                                    <div className="tab-pane active" id="review-information">
+                            <div className="tab-content">
+                                <div className="tab-pane active" id="review-information">
+                                    <div className="auth-form-innr">
                                         <div className="review-hdr mb-40">
                                             <h4>Profile Summary</h4>
                                             <span className="edit-icon"><img src={edit} alt="" /></span>
@@ -988,19 +1009,19 @@ const Register = () => {
                                         </div>
                                         <div className="mb-16">
                                             <div className="row">
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">Do you rent or own your home?</h6>
                                                     <p className="sub-para">Own</p>
                                                 </div>
-                                                <div className="col-md-8 mb-4">
+                                                <div className="col-xl-8 mb-4">
                                                     <h6 className="sub-hdr">Type of home</h6>
                                                     <p className="sub-para">Single Family</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">Do you have any other home beside your main one?</h6>
                                                     <p className="sub-para">A rental or investment one</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">How many vehicles are in your household?</h6>
                                                     <p className="sub-para">0</p>
                                                 </div>
@@ -1024,31 +1045,31 @@ const Register = () => {
                                         </div>
                                         <div className="mb-16">
                                             <div className="row">
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">Current Insurer:</h6>
                                                     <p className="sub-para">state farm</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">How long have you been uninsured?</h6>
                                                     <p className="sub-para">Less than 30 days</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">How do you pay for your insurance?</h6>
                                                     <p className="sub-para">I pay monthly</p>
                                                 </div>
-                                                <div className="col-md-12 mb-4">
+                                                <div className="col-xl-12 mb-4">
                                                     <h6 className="sub-hdr">How much do you pay per month?</h6>
                                                     <p className="sub-para">Under $100/month</p>
                                                 </div>
-                                                <div className="col-md-12 mb-4">
+                                                <div className="col-xl-12 mb-4">
                                                     <h6 className="sub-hdr">In the past 7 years (since November 2018), have you been involved in any accidents, experienced vehicle damage, or filed an insurance claim (regardless of fault)?</h6>
                                                     <p className="sub-para">Yes</p>
                                                 </div>
-                                                <div className="col-md-12 mb-4">
+                                                <div className="col-xl-12 mb-4">
                                                     <h6 className="sub-hdr">In the past 5 years (since November 2020), have you received any traffic tickets or violations?</h6>
                                                     <p className="sub-para">Yes</p>
                                                 </div>
-                                                <div className="col-md-12 mb-4">
+                                                <div className="col-xl-12 mb-4">
                                                     <h6 className="sub-hdr">Do you currently require an SR-22 filing?</h6>
                                                     <p className="sub-para">Yes</p>
                                                 </div>
@@ -1060,11 +1081,11 @@ const Register = () => {
                                         </div>
                                         <div className="mb-16">
                                             <div className="row">
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">How many people will be added?</h6>
                                                     <p className="sub-para">1</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 mb-4">
                                                     <h6 className="sub-hdr">How would you like to add them?</h6>
                                                     <p className="sub-para">Invite them</p>
                                                 </div>
@@ -1072,30 +1093,32 @@ const Register = () => {
                                         </div>
                                         <div className="review-innr-box">
                                             <div className="row">
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 col-md-6 mb-4">
                                                     <h6 className="sub-hdr">Full Name</h6>
                                                     <p className="sub-para">Carlos G</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 col-md-6  mb-4">
                                                     <h6 className="sub-hdr">Relationship to you *</h6>
                                                     <p className="sub-para">Spouse</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 col-md-6 mb-4">
                                                     <h6 className="sub-hdr">Invite or enter into yourself</h6>
                                                     <p className="sub-para">Yes, I’ll invite them</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 col-md-6 mb-4">
                                                     <h6 className="sub-hdr">Mode of invite</h6>
                                                     <p className="sub-para">Email</p>
                                                 </div>
-                                                <div className="col-md-4 mb-4">
+                                                <div className="col-xl-4 col-md-6 mb-4">
                                                     <h6 className="sub-hdr">Email Address</h6>
                                                     <p className="sub-para">Carlos@ctglead.com</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="tab-pane fade" id="disclaimers">
+                                </div>
+                                <div className="tab-pane fade" id="disclaimers">
+                                    <div className="auth-form-innr">
                                         <div className="review-hdr mb-40">
                                             <h4>Disclaimer Text</h4>
                                         </div>
@@ -1132,7 +1155,9 @@ const Register = () => {
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="tab-pane fade" id="sign-consent">
+                                </div>
+                                <div className="tab-pane fade" id="sign-consent">
+                                    <div className="auth-form-innr">
                                         <div className="review-hdr mb-40">
                                             <h4>Create your Signature</h4>
                                         </div>
@@ -1150,12 +1175,27 @@ const Register = () => {
                                                 </label>
                                             </li>
                                         </ul>
+                                        <div className="draw-otr">
+                                            <h6><span><img src={drawIcon} alt="" /></span> Draw</h6>
+                                            <div className="draw-box">
+                                                <img src={sign} alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="mt-4">
+                                        <label className="checkbox-container">I consent to CTG collecting and storing my information for the purpose of providing insurance quotes and related services
+                                            <input type="checkbox" />
+                                            <span className="checkmark"></span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="text-end mt-40">
-                            <button className="btn btn-primary">Next <span><img src={rightArrow} alt="" /></span></button>
+                            {/* next */}
+                            {/* <button className="btn btn-primary">Next <span><img src={rightArrow} alt="" /></span></button> */}
+                            {/* Complete Your Profile */}
+                            <button className="btn btn-primary">Complete Your Profile <span><img src={rightArrow} alt="" /></span></button>
                         </div>
                     </form>
                 </div>

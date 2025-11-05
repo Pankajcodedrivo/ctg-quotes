@@ -8,9 +8,39 @@
     flex-basis: 709px;
     height: 100vh;
     overflow-y: auto;
-
+    overflow-x: hidden;
+    @media only screen and (max-width: 1680px) {
+        max-width: 570px;
+        flex-basis: 570px;
+        padding-top: 60px;
+    }
+    @media only screen and (max-width: 1399px) {
+        max-width: 420px;
+        flex-basis: 420px;
+        padding-top: 40px;
+    }
+    @media only screen and (max-width: 991px) {
+        max-width: 300px;
+        flex-basis: 300px;
+        padding-top: 30px;
+    }
+    @media only screen and (max-width: 767px) {
+        max-width: 100%;
+        flex-basis: 100%;
+        height: auto;
+        overflow-y: hidden;
+    }
     .top-part {
         padding: 0 40px 135px;
+        @media only screen and (max-width: 1680px) {
+            padding-bottom: 100px;
+        }
+        @media only screen and (max-width: 991px) {
+            padding: 0 20px 80px;
+        }
+        @media only screen and (max-width: 767px) {
+            padding: 0 20px 60px;
+        }
 
         h1 {
             font-size: 72px;
@@ -21,6 +51,17 @@
             text-align: center;
             font-style: italic;
             max-width: 610px;
+            @media only screen and (max-width: 1680px) {
+                font-size: 55px;
+                margin-bottom: 30px;
+            }
+            @media only screen and (max-width: 1399px) {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            @media only screen and (max-width: 991px) {
+                font-size: 30px;
+            }
         }
 
         h6 {
@@ -29,6 +70,12 @@
             font-weight: 700;
             color: var(--color-white);
             margin-bottom: 0;
+            @media only screen and (max-width: 1399px) {
+                font-size: 16px;
+            }
+            @media only screen and (max-width: 991px) {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -56,7 +103,9 @@
 
 .auth-wrapper {
     display: flex;
-
+    @media only screen and (max-width: 767px) {
+        display: block;
+    }
     .right-panel {
         max-width: calc(100% - 709px);
         flex-basis: calc(100% - 709px);
@@ -67,7 +116,27 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-
+        @media only screen and (max-width: 1680px) {
+            max-width: calc(100% - 570px);
+            flex-basis: calc(100% - 570px);
+            padding: 40px 50px;
+        }
+        @media only screen and (max-width: 1399px) {
+            max-width: calc(100% - 420px);
+            flex-basis: calc(100% - 420px);
+            padding: 30px 30px;
+        }
+        @media only screen and (max-width: 991px) {
+           max-width: calc(100% - 300px);
+            flex-basis: calc(100% - 300px);
+        }
+        @media only screen and (max-width: 767px) {
+            max-width: 100%;
+            flex-basis: 100%;
+        }
+        @media only screen and (max-width: 575px) {
+            padding: 30px 15px;
+        }
         .innr-logo {
             margin-bottom: 80px;
             max-width: 298px;
@@ -75,6 +144,21 @@
             display: inline-block;
             margin-left: auto;
             margin-right: auto;
+            @media only screen and (max-width: 1680px) {
+                margin-bottom: 60px;
+                max-width: 250px;
+                min-width: 250px;
+            }
+            @media only screen and (max-width: 1399px) {
+                margin-bottom: 40px;
+                max-width: 190px;
+                min-width: 190px;
+            }
+            @media only screen and (max-width: 991px) {
+                margin-bottom: 30px;
+                max-width: 140px;
+                min-width: 140px;
+            }
         }
     }
 }
@@ -85,12 +169,26 @@
     background: var(--color-white);
     border-radius: 24px;
     padding: 40px;
-
+    @media only screen and (max-width: 1399px) {
+        padding: 30px 25px;
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 30px 17px;
+    }
     h4 {
         color: var(--color-black);
         font-size: 24px;
         font-weight: 600;
         margin-bottom: 0;
+        @media only screen and (max-width: 1680px) {
+            font-size: 22px;
+        }
+        @media only screen and (max-width: 1399px) {
+            font-size: 20px;
+        }
+         @media only screen and (max-width: 991px) {
+            font-size: 17px;
+        }
     }
 
     p {
@@ -98,6 +196,12 @@
         font-size: 16px;
         margin-bottom: 0;
         font-style: italic;
+         @media only screen and (max-width: 1399px) {
+            font-size: 14px;
+         }
+         @media only screen and (max-width: 991px) {
+            font-size: 13px;
+         }
     }
 }
 
@@ -105,13 +209,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
-
     .forgot-password {
         color: var(--color-52);
         font-size: 14px;
         font-weight: 600;
-
+        @media only screen and (max-width: 991px) {
+            font-size: 13px;
+         }
         &:hover {
             opacity: 0.6;
         }
@@ -120,13 +224,24 @@
 
 .sub-footer {
     padding-top: 40px;
-
+    @media only screen and (max-width: 1399px) {
+        padding-top: 30px;
+    }
     p {
         color: var(--color-black);
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 0;
-
+        @media only screen and (max-width: 1680px) {
+            font-size: 15px;
+        }
+        @media only screen and (max-width: 1399px) {
+            font-size: 14px;
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+        
         &.copiright {
             color: var(--color-7b);
             font-weight: 400;
@@ -154,6 +269,9 @@
     align-items: center;
     gap: 16px;
     margin-bottom: 12px;
+    @media only screen and (max-width: 575px) {
+        gap: 8px;
+    }
 }
 
 .otp-input {
@@ -168,7 +286,16 @@
     outline: none;
     transition: all 0.2s ease-in-out;
     background-color: transparent;
-
+    @media only screen and (max-width: 1399px) {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+    }
+    @media only screen and (max-width: 575px) {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
     &::placeholder {
         color: rgba(0, 0, 0, 0.16);
     }
@@ -182,9 +309,13 @@
 
 .security-code {
     p {
-        margin-bottom: 40px;
+        // margin-bottom: 40px;
         font-size: 16px;
         color: var(--color-7b);
+        @media only screen and (max-width: 1399px) {
+            font-size: 14px;
+            // margin-bottom: 30px;
+        }
     }
 }
 
