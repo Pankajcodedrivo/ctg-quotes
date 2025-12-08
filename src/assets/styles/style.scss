@@ -21,6 +21,7 @@
     --color-7bf:#007BFF;
     --color-3d:#3D3D3D;
     --color-4b:#4B4B4B;
+    --color-ce:#CECECE;
 }
 // end variables
 
@@ -87,31 +88,37 @@ img {
 }
 
 h1 {
-    font-size: 64px;
-    font-weight: 600;
-    @media (max-width:1700px) {
-        font-size: 60px;
+    font-size: 80px;
+    font-weight: 700;
+    @media (max-width:1680px) {
+        font-size: 65px;
     }
 }
 
 h2 {
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 600;
     color: var(--color-black);
-     @media (max-width:1700px) {
-        font-size: 60px;
+     @media (max-width:1680px) {
+        font-size: 45px;
     }
 }
 h3 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 32px;
-    color: #292929;
+    color: var(--color-black);
+    @media (max-width:1680px) {
+        font-size:26px;
+    }
 }
 
 h4 {
     font-size: 28px;
     font-weight: 600;
-    color: #292929;
+    color: var(--color-black);
+    @media (max-width:1680px) {
+        font-size: 24px;
+    }
 }
 
 ul {
@@ -144,6 +151,21 @@ input.form-control:focus {
         font-size: 13px;
         padding: 14px 14px;
     }
+    &.lg {
+        padding: 40px;
+        font-size: 28px;
+        font-weight: 700;
+        @media only screen and (max-width: 1680px) {
+            padding: 30px;
+        }
+    }
+    &.md {
+        padding: 24px;
+        font-size: 24px;
+        @media only screen and (max-width: 1680px) {
+            padding: 20px;
+        }
+    }
     &.btn-primary {
         background: var(--color-7bf);
         color: var(--color-white);
@@ -157,6 +179,15 @@ input.form-control:focus {
         &:hover {
             background: var(--color-52);
         }
+    }
+    &.btn-outline {
+        border: 1px solid var(--color-white);
+        background: transparent;
+        color: var(--color-white);
+    }
+    &.red-btn {
+        background: var(--color-52);
+        color: var(--color-white);
     }
 }
 
@@ -413,41 +444,26 @@ select {
     }
 }
 .common-gap {
-    padding: 184px 0;
-    @media (max-width:1700px) {
-        padding: 150px 0;
+    padding: 140px 0;
+    @media (max-width:1680px) {
+        padding: 120px 0;
     }
 }
 .cmn-hdr {
-    margin-bottom: 50px;
-    h6 {
-        font-size: 32px;
-        font-weight: 700;
-        padding: 8px 12px;
-        // background: var(--color-ef);
-        box-shadow: 0px 4px 14px 0px #00000024;
-        margin-bottom: 24px;
-        color: var(--color-black);
-        font-style: italic;
-        font-family: var(--secondary-font);
-        display: inline-block;
-        &.blue {
-            // background: var(--color-a7);
-            color: var(--color-white);
-        }
-        @media (max-width:1700px) {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-    }
+    margin-bottom: 64px;
     h2 {
         margin-bottom: 0;
     }
     p {
-        margin-top: 24px;
+        margin-top: 48px;
         font-size: 25px;
-        font-weight: 400;
+        font-weight: 500;
+        color:var(--color-4b);
         margin-bottom: 0;
+        @media (max-width:1680px) {
+            font-size: 22px;
+            margin-top: 30px;
+        }
     }
 }
 .mt-40 {
