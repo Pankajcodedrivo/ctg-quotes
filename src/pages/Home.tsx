@@ -28,6 +28,8 @@ import appStore from "../assets/images/app-store.png"
 import googlePlay from "../assets/images/google-play.png"
 import Newsletter from "../components/Newsletter";
 import CustomerSlider from "../components/CustomerSlider";
+import FeaturesBox from "../components/FeaturesBox";
+import WhyChooseBox from "../components/WhyChooseBox";
 const Home = () => {
     return (
         <>
@@ -67,34 +69,18 @@ const Home = () => {
             </div>
             <section className="common-gap">
                 <div className="container">
-                    <div className="row text-center">
-                        <div className="col-md-3">
-                            <div className="features-box">
-                                <figure><img src={ficon1} alt="" /></figure>
-                                <h3>Auto</h3>
-                                <p>Average savings of over $800</p>
-                            </div>
+                    <div className="row text-center g-4">
+                        <div className="col-lg-3 col-md-6">
+                            <FeaturesBox title="Auto" desc="Average savings of over $800" img={ficon1} />
                         </div>
-                        <div className="col-md-3">
-                            <div className="features-box">
-                                <figure><img src={ficon2} alt="" /></figure>
-                                <h3>Property</h3>
-                                <p>Home, renters, condo & more</p>
-                            </div>
+                        <div className="col-lg-3 col-md-6">
+                            <FeaturesBox title="Property" desc="Home, renters, condo & more" img={ficon2} />
                         </div>
-                        <div className="col-md-3">
-                            <div className="features-box">
-                                <figure><img src={ficon3} alt="" /></figure>
-                                <h3>Bundle & Save</h3>
-                                <p>Auto + home, renters or condo</p>
-                            </div>
+                        <div className="col-lg-3 col-md-6">
+                            <FeaturesBox title="Bundle & Save" desc="Auto + home, renters or condo" img={ficon3} />
                         </div>
-                        <div className="col-md-3">
-                            <div className="features-box">
-                                <figure><img src={ficon4} alt="" /></figure>
-                                <h3>Life</h3>
-                                <p>Term life, whole life & more</p>
-                            </div>
+                        <div className="col-lg-3 col-md-6">
+                            <FeaturesBox title="Life" desc="Term life, whole life & more" img={ficon4} />
                         </div>
                     </div>
                 </div>
@@ -105,27 +91,15 @@ const Home = () => {
                         <h2>Why Choose CTG Quotes?</h2>
                         <p>Revolutionizing how you shop for insurance</p>
                     </div>
-                    <div className="row">
+                    <div className="row g-4">
                         <div className="col-md-4">
-                            <div className="why-choose-box">
-                                <span className="why-icon"><img src={whyIcon1} alt="" /></span>
-                                <h4>Full Transparency</h4>
-                                <p>Understand exactly what factors affect your insurance rates with our educational tools and clear explanations.</p>
-                            </div>
+                            <WhyChooseBox title="Full Transparency" desc="Understand exactly what factors affect your insurance rates with our educational tools and clear explanations." img={whyIcon1} />
                         </div>
                         <div className="col-md-4">
-                            <div className="why-choose-box">
-                                <span className="why-icon"><img src={whyIcon2} alt="" /></span>
-                                <h4>No Phone Harassment</h4>
-                                <p>Control when and how agencies contact you. Only provide your number when you’re ready to move forward.</p>
-                            </div>
+                            <WhyChooseBox title="No Phone Harassment" desc="Control when and how agencies contact you. Only provide your number when you’re ready to move forward." img={whyIcon2} />
                         </div>
                         <div className="col-md-4">
-                            <div className="why-choose-box">
-                                <span className="why-icon"><img src={whyIcon3} alt="" /></span>
-                                <h4>Better Rates</h4>
-                                <p>Compare personalized quotes from multiple agencies instantly and find the best coverage for your needs.</p>
-                            </div>
+                            <WhyChooseBox title="Better Rates" desc="Compare personalized quotes from multiple agencies instantly and find the best coverage for your needs." img={whyIcon3} />
                         </div>
                     </div>
                 </div>
@@ -180,16 +154,36 @@ const Home = () => {
                                     <div className="col-md-5 p-0 w-45">
                                         <div className="why-works-innr why-works-left">
                                             <div className="why-works-hdr"><img src={ctglogo} alt="" /></div>
-                                            <ul>
-                                                <li>Profile stays with you for life — never repeat information</li>
-                                                <li>You control your quotes & who calls you</li>
-                                                <li>Limit who has your information</li>
-                                                <li>Real, final rates, never hypotheticals</li>
-                                                <li>Family Tree keeps all drivers & coverage organized</li>
-                                            </ul>
+                                            <div className="why-works">
+                                                <ul className="d-block d-md-none mb-list">
+                                                    <li>
+                                                        <span><img src={vs1} alt="" /></span>
+                                                        Accuracy
+                                                    </li>
+                                                    <li>
+                                                        <span><img src={vs2} alt="" /></span>
+                                                        On The Time
+                                                    </li>
+                                                    <li>
+                                                        <span><img src={vs3} alt="" /></span>
+                                                        Real Quotes
+                                                    </li>
+                                                    <li>
+                                                        <span><img src={vs4} alt="" /></span>
+                                                        Costs
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>Profile stays with you for life — never repeat information</li>
+                                                    <li>You control your quotes & who calls you</li>
+                                                    <li>Limit who has your information</li>
+                                                    <li>Real, final rates, never hypotheticals</li>
+                                                    <li>Family Tree keeps all drivers & coverage organized</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-2 p-0  w-10">
+                                    <div className="col-md-2 p-0  w-10 d-none d-md-flex">
                                         <div className="why-works-mid">
                                             <div className="why-works-hdr">VS</div>
                                             <ul>
@@ -215,13 +209,33 @@ const Home = () => {
                                     <div className="col-md-5 p-0  w-45">
                                         <div className="why-works-innr why-works-right">
                                             <div className="why-works-hdr">Other Companies</div>
-                                            <ul>
-                                                <li>Re-enter information for every single quote</li>
-                                                <li>Endless spam calls from random agents</li>
-                                                <li>Information gets sold hundreds of times</li>
-                                                <li>Fake teaser rates — final price is higher</li>
-                                                <li>Countless forms, multiple callbacks to finish one quote, and wasted time</li>
-                                            </ul>
+                                            <div className="why-works">
+                                                <ul className="d-block d-md-none mb-list">
+                                                    <li>
+                                                        <span><img src={vs1} alt="" /></span>
+                                                        Accuracy
+                                                    </li>
+                                                    <li>
+                                                        <span><img src={vs2} alt="" /></span>
+                                                        On The Time
+                                                    </li>
+                                                    <li>
+                                                        <span><img src={vs3} alt="" /></span>
+                                                        Real Quotes
+                                                    </li>
+                                                    <li>
+                                                        <span><img src={vs4} alt="" /></span>
+                                                        Costs
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>Re-enter information for every single quote</li>
+                                                    <li>Endless spam calls from random agents</li>
+                                                    <li>Information gets sold hundreds of times</li>
+                                                    <li>Fake teaser rates — final price is higher</li>
+                                                    <li>Countless forms, multiple callbacks to finish one quote, and wasted time</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -243,7 +257,7 @@ const Home = () => {
                         <h2>Why Consumers Love CTG Quotes?</h2>
                     </div>
                     <div className="row align-items-center g-5">
-                        <div className="col-md-4">
+                        <div className="col-md-4 ordr-1">
                             <ul className="why-consumer-list">
                                 <li>
                                     <span><img src={icn1} alt="" /></span>
@@ -259,10 +273,10 @@ const Home = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 ordr-2">
                             <figure className="mb-0 w-100"><img src={whyConsumerImg} alt="" /></figure>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 ordr-3">
                             <ul className="why-consumer-list">
                                 <li>
                                     <span><img src={icn4} alt="" /></span>

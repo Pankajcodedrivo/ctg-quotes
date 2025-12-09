@@ -3,7 +3,7 @@ const Newsletter = () => {
     return (
         <div className="newsletter-sec text-center">
             <div className="container">
-                <div className="cmn-hdr wh text-center">
+                <div className="cmn-hdr mb-0 wh text-center">
                     <h2>Ready to Save on Insurance?</h2>
                     <p>Join thousands of customers who have already saved money with transparent, hassle-free insurance shopping.</p>
                 </div>

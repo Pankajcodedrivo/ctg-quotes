@@ -133,3 +133,43 @@
         }
     }
 }
+// responsive
+@media only screen and (max-width: 1199px) {
+     .logo-area {
+        max-width: 180px;
+        min-width: 180px;
+    }
+      .hdr-btn-outr .btn {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+.logo-area {
+    max-width: 140px;
+    min-width: 140px;
+  }
+   .header {
+    padding: 15px 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+     .logo-area {
+    max-width: 110px;
+    min-width: 110px;
+  }
+   .hdr-btn-outr .btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 360px) {
+      .logo-area {
+    max-width: 90px;
+    min-width: 90px;
+  }
+   .hdr-btn-outr .btn {
+    padding: 11px;
+    font-size: 13px;
+  }
+}
