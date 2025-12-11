@@ -23,21 +23,6 @@ import Icon6 from "../../assets/images/icon-6.svg"
 const Register = () => {
     return (
         <section className="auth-wrapper">
-            {/* Personal Information */}
-            <LeftPanelRegister title="Personal Information" img={infoIcon} />
-            {/* Location */}
-            {/* <LeftPanelRegister title="Location" img={Icon2} /> */}
-            {/* Property & Vehicle Details */}
-            {/* <LeftPanelRegister title="Property & Vehicle Details" img={Icon3} /> */}
-            {/* What Would You Like to Explore? */}
-            {/* <LeftPanelRegister title="What Would You Like to Explore?" img={infoIcon} /> */}
-            {/*  Insurance History */}
-            {/* <LeftPanelRegister title=" Insurance History" img={Icon4} /> */}
-            {/* Family Circle */}
-            {/* <LeftPanelRegister title="Family Circle" img={Icon5} /> */}
-            {/* Review & Consent */}
-            {/* <LeftPanelRegister title="Review & Consent" img={Icon6} /> */}
-
             <div className="right-panel">
                 <div className="form-top">
                     <SubHeader />
@@ -45,9 +30,13 @@ const Register = () => {
                         <ul className="step-list">
                             <li className="active">
                                 <span><img src={tick} alt="" /></span>
-                                <p>Step 1</p>
+                                <p>Start</p>
                             </li>
                             <li className="completed">
+                                <span><img src={tick} alt="" /></span>
+                                <p>Step 1</p>
+                            </li>
+                            <li>
                                 <span><img src={tick} alt="" /></span>
                                 <p>Step 2</p>
                             </li>
@@ -58,18 +47,6 @@ const Register = () => {
                             <li>
                                 <span><img src={tick} alt="" /></span>
                                 <p>Step 4</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 5</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 6</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 7</p>
                             </li>
                         </ul>
 

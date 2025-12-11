@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import rightArrow from "../../assets/images/right-arrow.svg"
-import LeftPanel from "../../components/LeftPanel";
-import SubFooter from "../../components/SubFooter";
-import SubHeader from "../../components/SubHeader";
-import eye from "../../assets/images/eye-off.svg"
+import rightArrow from "../../../assets/images/right-arrow.svg"
+import LeftPanel from "../../../components/LeftPanel";
+import SubFooter from "../../../components/SubFooter";
+import SubHeader from "../../../components/SubHeader";
+import eye from "../../../assets/images/eye-off.svg"
 
 const Login = () => {
     return (

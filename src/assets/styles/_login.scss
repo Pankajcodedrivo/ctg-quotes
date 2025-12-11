@@ -30,6 +30,10 @@
         height: auto;
         overflow-y: hidden;
     }
+    &.register {
+        max-width: 550px;
+        flex-basis: 550px;
+    }
     .top-part {
         padding: 0 40px 135px;
         @media only screen and (max-width: 1680px) {
@@ -116,6 +120,10 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        &.register {
+            max-width: calc(100% - 550px);
+            flex-basis: calc(100% - 550px);
+        }
         @media only screen and (max-width: 1680px) {
             max-width: calc(100% - 570px);
             flex-basis: calc(100% - 570px);
@@ -224,7 +232,7 @@
 }
 
 .sub-footer {
-    padding-top: 40px;
+    padding-top: 56px;
     @media only screen and (max-width: 1399px) {
         padding-top: 30px;
     }
@@ -246,7 +254,9 @@
         &.copiright {
             color: var(--color-7b);
             font-weight: 400;
-
+            span {
+                font-weight: 500;
+            }
             a {
                 color: var(--color-7b);
                 text-decoration: none;

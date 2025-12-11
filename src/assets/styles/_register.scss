@@ -3,7 +3,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 30px 60px;
+        padding: 30px 30px;
 
         @media only screen and (max-width: 767px) {
             padding: 80px 40px;
@@ -15,6 +15,7 @@
     text-align: center;
     position: relative;
     padding-top: 130px;
+    width: 100%;
 
     @media only screen and (max-width: 1399px) {
         padding-top: 90px;
@@ -37,20 +38,16 @@
         }
 
         img {
-            width: 100%;
+            width: 90%;
         }
     }
 
     .info-icon {
         display: block;
-        margin-bottom: 42px;
-
-        @media only screen and (max-width: 1680px) {
-            max-width: 110px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
-        }
+        margin-bottom: 30px;
+        max-width: 105px;
+        margin-left: auto;
+        margin-right: auto;
 
         @media only screen and (max-width: 1399px) {
             max-width: 80px;
@@ -63,7 +60,7 @@
     }
 
     h1 {
-        font-size: 72px;
+        font-size: 56px;
         font-weight: 700;
         color: var(--color-white);
         margin-bottom: 0;
@@ -78,6 +75,14 @@
 
         @media only screen and (max-width: 991px) {
             font-size: 30px;
+        }
+
+        span {
+            font-size: 32px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.64);
+            display: block;
+            margin-top: 15px;
         }
     }
 }
@@ -98,9 +103,11 @@
     @media only screen and (max-width: 575px) {
         margin-bottom: 25px;
     }
+
     @media only screen and (max-width: 360px) {
         gap: 8px;
     }
+
     &:after {
         position: absolute;
         content: '';
@@ -200,6 +207,7 @@
             @media only screen and (max-width: 991px) {
                 font-size: 12px;
             }
+
             @media only screen and (max-width: 360px) {
                 font-size: 11px;
             }
@@ -247,6 +255,10 @@
         bottom: 0;
         right: 0;
         height: 100%;
+
+        &:hover {
+            border-color: transparent;
+        }
     }
 }
 
@@ -265,6 +277,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @media only screen and (max-width:575px) {
         gap: 15px;
     }
@@ -482,6 +495,7 @@ p.info-txt {
     @media only screen and (max-width: 1399px) {
         font-size: 14px;
     }
+
     @media only screen and (max-width: 575px) {
         font-size: 12px;
     }
@@ -497,9 +511,11 @@ p.sub-para {
     @media only screen and (max-width: 1399px) {
         font-size: 14px;
     }
+
     @media only screen and (max-width: 575px) {
         font-size: 12px;
     }
+
     &.back {
         background: #FFFCF2;
         padding: 4px 12px;
@@ -522,6 +538,7 @@ p.sub-para {
     background: #F2F7FF;
     padding: 40px 24px;
     border-radius: 24px;
+
     @media only screen and (max-width: 575px) {
         padding: 25px 20px;
     }
@@ -541,9 +558,11 @@ p.sub-para {
         @media only screen and (max-width: 991px) {
             gap: 15px;
         }
+
         @media only screen and (max-width: 575px) {
             justify-content: center;
         }
+
         li.nav-item {
             a.nav-link {
                 font-size: 24px;
@@ -573,6 +592,10 @@ p.sub-para {
                     border-color: var(--color-blue) !important;
                     color: var(--color-black);
                     font-weight: 700;
+                }
+
+                &.completed {
+                    color: var(--color-blue);
                 }
             }
         }
@@ -631,5 +654,161 @@ p.sub-para {
                 }
             }
         }
+    }
+}
+
+.btn-bottom {
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.btn.btn-outline {
+    &.blue {
+        border-color: var(--color-7bf);
+        color: var(--color-7bf);
+
+        &:hover {
+            background: var(--color-7bf);
+            color: var(--color-white);
+        }
+    }
+}
+
+.edit-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    border: 1px solid #3F85D8;
+    border-radius: 24px;
+    margin-bottom: 56px;
+    background: #F2F7FF;
+
+    h4 {
+        margin-bottom: 0;
+    }
+
+    .edit-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.profile-creation {
+    background: #0057FF;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 70px;
+    overflow-y: auto;
+
+    .spinner-border {
+        margin-bottom: 56px;
+        position: relative;
+        --bs-spinner-border-width: 0.15em;
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 1px solid #4081FF;
+            border-radius: 100%;
+        }
+    }
+
+    h2 {
+        color: var(--color-white);
+        font-weight: 700;
+        margin-bottom: 80px;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 40px;
+        color: var(--color-white);
+    }
+}
+
+.spinner-border {
+    width: 130px;
+    height: 130px;
+    border: var(--bs-spinner-border-width) solid var(--color-white);
+    border-right-color: transparent;
+}
+
+.bottom-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 15px;
+
+    .sub-footer {
+        p {
+            color: var(--color-white);
+            font-size: 16px;
+
+            a {
+                color: var(--color-white);
+            }
+        }
+    }
+}
+
+.family-care-box {
+    border: 1px solid #0057FF;
+    box-shadow: 0px 0px 20px 0px #0000001A;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    border-radius: 24px;
+    margin-bottom: 24px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .family-care-img {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 100%;
+        background: #F6F6F6;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .family-care-txt h3 {
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--color-black);
+        margin-bottom: 5px;
+    }
+
+    .family-care-txt p {
+        margin-bottom: 0;
+        font-style: normal;
+        font-weight: 600;
+        color: var(--color-black);
+    }
+}
+
+.para {
+    p {
+        font-size: 14px;
+        font-style: normal;
+        color: #3D3D3D;
     }
 }

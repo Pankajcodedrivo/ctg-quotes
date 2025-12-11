@@ -191,6 +191,7 @@ input.form-control:focus {
         color: var(--color-white);
         &:hover {
             background: var(--color-52);
+            border-color: transparent;
         }
     }
     &.btn-secondary {
@@ -198,6 +199,11 @@ input.form-control:focus {
         color: var(--color-7b);
         &:hover {
             background: var(--color-52);
+            border-color: transparent;
+            color: var(--color-white);
+            img {
+                filter: brightness(100);
+            }
         }
     }
     &.btn-outline {
@@ -208,6 +214,9 @@ input.form-control:focus {
     &.red-btn {
         background: var(--color-52);
         color: var(--color-white);
+        &:hover {
+            border-color: transparent;
+        }
     }
 }
 
@@ -337,12 +346,9 @@ input:checked ~ .checkmark:after {
 }
 .form-label {
     color: var(--color-3d);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     margin-bottom: 16px;
-    @media only screen and (max-width: 1399px) {
-        font-size: 14px;
-    }
     @media only screen and (max-width: 575px) {
         font-size: 13px;
     }
@@ -362,6 +368,9 @@ input:checked ~ .checkmark:after {
         font-weight: 600;
         font-size: 14px;
         z-index: 1;
+        @media only screen and (max-width: 1680px) {
+            font-size: 13px;
+        }
         @media only screen and (max-width: 1399px) {
             font-size: 12px;
         }
