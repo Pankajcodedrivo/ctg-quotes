@@ -9,7 +9,7 @@ import ProfileCreationLoader from "../pages/auth/Register/ProfileCreationLoader"
 import Step1 from "../pages/auth/Register/Step1";
 import Step2 from "../pages/auth/Register/Step2";
 import Step3 from "../pages/auth/Register/Step3";
-import Step4 from "../pages/auth/Register/Step4";
+import AccountSetup1 from "../pages/auth/Register/Step4/AccountSetup1";
 import Step5 from "../pages/auth/Register/Step5";
 import InvitedStep1 from "../pages/auth/Register/IfSomeoneInvitedYou/Step1";
 import InvitedStep2 from "../pages/auth/Register/IfSomeoneInvitedYou/Step2";
@@ -17,6 +17,7 @@ import InvitedStep3 from "../pages/auth/Register/IfSomeoneInvitedYou/Step3";
 import InvitedStep5 from "../pages/auth/Register/IfSomeoneInvitedYou/Step5";
 import Step4VehicleEdit from "../pages/auth/Register/IfSomeoneInvitedYou/Step4VehicleEdit"
 import Step4VehicleInformation from "../pages/auth/Register/IfSomeoneInvitedYou/Step4VehicleInformation"
+import AccountSetup2 from "../pages/auth/Register/Step4/AccountSetup2";
 
 export default function AppRoutes() {
   return (
@@ -28,8 +29,10 @@ export default function AppRoutes() {
       <Route path="/step-1" element={<Step1 />} />
       <Route path="/step-2" element={<Step2 />} />
       <Route path="/step-3" element={<Step3 />} />
-      <Route path="/step-4" element={<Step4 />} />
+      <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
+      <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
       <Route path="/step-5" element={<Step5 />} />
+      <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
       {/* If Someone Invited You */}
       <Route path="/invited/step-1" element={<InvitedStep1 />} />
       <Route path="/invited/step-2" element={<InvitedStep2 />} />
@@ -37,9 +40,9 @@ export default function AppRoutes() {
       <Route path="/invited/step-vehicle-edit" element={<Step4VehicleEdit />} />
       <Route path="/invited/step-vehicle-information" element={<Step4VehicleInformation />} />
       <Route path="/invited/step-5" element={<InvitedStep5 />} />
+      
       <Route path="/register" element={<Register />} />
       <Route path="/my-profile" element={<MyProfile />} />
-      <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
     </Routes>
   );
 }

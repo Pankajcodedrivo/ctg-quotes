@@ -210,12 +210,18 @@ input.form-control:focus {
         border: 1px solid var(--color-white);
         background: transparent;
         color: var(--color-white);
+        &:hover {
+            background: var(--color-black);
+            border-color: transparent;
+            color: var(--color-white);
+        }
     }
     &.red-btn {
         background: var(--color-52);
         color: var(--color-white);
         &:hover {
             border-color: transparent;
+            background: var(--color-black);
         }
     }
 }
@@ -354,7 +360,6 @@ input:checked ~ .checkmark:after {
     }
     span {
         font-style: italic;
-        font-weight: 400;
         color: #A8A8A8;
     }
     &.float {

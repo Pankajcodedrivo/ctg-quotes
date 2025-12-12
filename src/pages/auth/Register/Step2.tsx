@@ -3,9 +3,9 @@ import SubFooter from "../../../components/SubFooter";
 import SubHeader from "../../../components/SubHeader";
 import LeftPanelRegister from "../../../components/LeftPanelRegister";
 import Icon2 from "../../../assets/images/icon-2.svg"
-import tick from "../../../assets/images/tick.svg"
 import rightArrow from "../../../assets/images/right-arrow.svg"
 import leftArrow from "../../../assets/images/left-arrow.svg"
+import Step from "../../../components/Step";
 const Step2 = () => {
     return (
         <section className="auth-wrapper">
@@ -14,28 +14,7 @@ const Step2 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                        <ul className="step-list">
-                            <li className="active">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 1</p>
-                            </li>
-                            <li className="completed">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 2</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 3</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 4</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 5</p>
-                            </li>
-                        </ul>
+                       <Step />
                        <div className="auth-form">
                             <div>
                                 <div className="row">

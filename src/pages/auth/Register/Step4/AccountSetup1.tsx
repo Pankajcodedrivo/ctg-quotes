@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import SubFooter from "../../../components/SubFooter";
-import SubHeader from "../../../components/SubHeader";
-import LeftPanelRegister from "../../../components/LeftPanelRegister";
-import tick from "../../../assets/images/tick.svg"
-import rightArrow from "../../../assets/images/right-arrow.svg"
-import leftArrow from "../../../assets/images/left-arrow.svg"
-import Icon8 from "../../../assets/images/icon-8.svg"
-import user from "../../../assets/images/user.png"
+import SubFooter from "../../../../components/SubFooter";
+import SubHeader from "../../../../components/SubHeader";
+import LeftPanelRegister from "../../../../components/LeftPanelRegister";
+import Step from "../../../../components/Step";
+import rightArrow from "../../../../assets/images/right-arrow.svg"
+import leftArrow from "../../../../assets/images/left-arrow.svg"
+import Icon8 from "../../../../assets/images/icon-8.svg"
+import user from "../../../../assets/images/user.png"
+import plus from "../../../../assets/images/plus.svg"
 const Step4 = () => {
     return (
         <section className="auth-wrapper">
@@ -15,28 +16,7 @@ const Step4 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                        <ul className="step-list">
-                            <li className="active">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 1</p>
-                            </li>
-                            <li className="completed">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 2</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 3</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 4</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 5</p>
-                            </li>
-                        </ul>
+                        <Step />
                        <div className="auth-form">
                             <div className="mb-4">
                                 <h4>Create Your Family Circle</h4>
@@ -54,15 +34,9 @@ const Step4 = () => {
                                         <p>Main Insured</p>
                                     </div>
                                 </div>
-                                <div className="family-care-box">
-                                    <div className="family-care-img">
-                                        <img src={user} alt="" />
-                                    </div>
-                                    <div className="family-care-txt">
-                                        <h3>You</h3>
-                                        <p>Main Insured</p>
-                                    </div>
-                                </div>
+                            </div>
+                            <div className="add-membar">
+                                <span><img src={plus} alt="" /></span>
                             </div>
                         </div>
                         <div className="btn-flex mt-40">

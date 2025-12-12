@@ -3,10 +3,11 @@ import SubFooter from "../../../components/SubFooter";
 import SubHeader from "../../../components/SubHeader";
 import LeftPanelRegister from "../../../components/LeftPanelRegister";
 import infoIcon from "../../../assets/images/info-icon-1.svg"
-import tick from "../../../assets/images/tick.svg"
 import eye from "../../../assets/images/eye-off.svg"
 import rightArrow from "../../../assets/images/right-arrow.svg"
-const Step1 = () => {
+import check from "../../../assets/images/check.svg"
+import Step from "../../../components/Step";
+const AccountSetup1 = () => {
     return (
         <section className="auth-wrapper">
             <LeftPanelRegister title="Personal Information" subtitle="" img={infoIcon} />
@@ -14,28 +15,7 @@ const Step1 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                        <ul className="step-list">
-                            <li className="active">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 1</p>
-                            </li>
-                            <li className="completed">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 2</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 3</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 4</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 5</p>
-                            </li>
-                        </ul>
+                        <Step />
                         <div className="auth-form">
                             <div className="mb-40">
                                 <div className="mb-4">
@@ -57,7 +37,7 @@ const Step1 = () => {
                                     <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">Birthday <span>(DOB)*</span></label>
-                                            <input type="date" className="form-control" placeholder="Select DOB" />
+                                            <input type="date" className="form-control date-input" placeholder="Select DOB" />
                                         </div>
                                     </div>
                                     <div className="col-xl-6">
@@ -85,66 +65,6 @@ const Step1 = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="mb-40">
-                                <div className="mb-4">
-                                    <h4>Driver Licence Information</h4>
-                                </div>
-                                <div className="row">
-                                    <div className="col-xl-6">
-                                        <div className="form-group">
-                                            <label className="form-label float">What kind of driver’s license do you have?*</label>
-                                            <select name="" id="" className="form-control">
-                                                <option value="1" disabled>Select option</option>
-                                                <option value="1">Select option</option>
-                                                <option value="1">Select option</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6">
-                                        <div className="form-group">
-                                            <label className="form-label float">How many years have you been licensed?*</label>
-                                            <select name="" id="" className="form-control">
-                                                <option value="1" disabled>Select option</option>
-                                                <option value="1">Select option</option>
-                                                <option value="1">Select option</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="form-group">
-                                            <label className="form-label float">Driver’s License State *</label>
-                                            <select name="" id="" className="form-control">
-                                                <option value="1" disabled>Select State</option>
-                                                <option value="1">Select State</option>
-                                                <option value="1">Select State</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="form-group">
-                                            <label className="form-label float">Driver’s Licence Number *</label>
-                                            <input type="text" className="form-control" placeholder="Enter Number" />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                        <label className="form-label">Has your driver’s license been suspended in the last 5 years?*</label>
-                                        <ul className="radio-list">
-                                            <li>
-                                                <label className="radio-container">Yes
-                                                    <input type="radio" name="radio" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label className="radio-container">No
-                                                    <input type="radio" name="radio" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                             <div>
                                 <div className="mb-4">
                                     <h4>Login & Contact Information</h4>
@@ -166,6 +86,23 @@ const Step1 = () => {
                                                 <input type="tel" className="form-control" placeholder="Enter Number" />
                                                 <button className="btn btn-primary" type="submit">Verify</button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-xl-6">
+                                        <div className="form-group">
+                                            <label className="form-label">Security Code <span className="ms-1"><img src={check} alt="" /></span></label>
+                                            <div className="otp-container security-code-wrap">
+                                                <input type="password" placeholder="1" maxLength={1} className="otp-input" />
+                                                <input type="password" placeholder="1" maxLength={1} className="otp-input" />
+                                                <input type="password" placeholder="1" maxLength={1} className="otp-input" />
+                                                <input type="password" placeholder="1" maxLength={1} className="otp-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-xl-6">
+                                        <div className="form-group">
+                                            <label className="form-label mb-1">Security Code</label>
+                                            <input type="text" className="form-control" placeholder="Enter Security Code" />
                                         </div>
                                     </div>
                                     <div className="col-xl-6">
@@ -204,4 +141,4 @@ const Step1 = () => {
     )
 };
 
-export default Step1;
+export default AccountSetup1;

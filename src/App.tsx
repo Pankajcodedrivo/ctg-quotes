@@ -6,7 +6,7 @@ import AppRoutes from './routes/AppRoutes'
 
 function App() {
   const location = useLocation();
-  const hideLayout = location.pathname === "/invited/step-vehicle-information";
+  const hideLayout = location.pathname === "/step-4/account-setup-2";
   return (
     <>
     {!hideLayout && <Header />}

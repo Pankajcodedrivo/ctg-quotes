@@ -3,7 +3,7 @@ import SubFooter from "../../../../components/SubFooter";
 import SubHeader from "../../../../components/SubHeader";
 import LeftPanelRegister from "../../../../components/LeftPanelRegister";
 import infoIcon from "../../../../assets/images/info-icon-1.svg"
-import tick from "../../../../assets/images/tick.svg"
+import Step from "../../../../components/Step";
 import eye from "../../../../assets/images/eye-off.svg"
 import rightArrow from "../../../../assets/images/right-arrow.svg"
 const Step1 = () => {
@@ -14,28 +14,7 @@ const Step1 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                        <ul className="step-list">
-                            <li className="active">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Start</p>
-                            </li>
-                            <li className="completed">
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 1</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 2</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 3</p>
-                            </li>
-                            <li>
-                                <span><img src={tick} alt="" /></span>
-                                <p>Step 4</p>
-                            </li>
-                        </ul>
+                        <Step />
                         <div className="auth-form">
                             <div className="mb-40">
                                 <div className="mb-4">
@@ -57,7 +36,7 @@ const Step1 = () => {
                                     <div className="col-xl-6">
                                         <div className="form-group">
                                             <label className="form-label float">Birthday <span>(DOB)*</span></label>
-                                            <input type="date" className="form-control" placeholder="Select DOB" />
+                                            <input type="date" className="form-control date-input" placeholder="Select DOB" />
                                         </div>
                                     </div>
                                     <div className="col-xl-6">
