@@ -51,7 +51,7 @@ const AccountSetup2 = () => {
                                 <span><img src={plus} alt="" /></span>
                                 <p>Add Member</p>
                             </div>
-                            <div className="family-care-box justify-content-start align-items-start">
+                            <div className="family-care-box mobile-start justify-content-start align-items-start">
                                 <div className="family-care-img">
                                     <img src={user} alt="" />
                                 </div>
@@ -61,13 +61,13 @@ const AccountSetup2 = () => {
                                     <div className="add-mmeber-form">
                                         <form action="">
                                             <div className="row">
-                                                <div className="col-md-6">
+                                                <div className="col-lg-6">
                                                     <div className="form-group">
                                                         <label className="form-label float">Name*</label>
                                                         <input type="text" className="form-control" placeholder="David" />
                                                     </div>
                                                 </div>
-                                                <div className="col-md-6">
+                                                <div className="col-lg-6">
                                                     <div className="form-group">
                                                         <label className="form-label float">Relationship*</label>
                                                         <input type="text" className="form-control" placeholder="Son" />

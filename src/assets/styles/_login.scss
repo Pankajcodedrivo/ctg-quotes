@@ -33,6 +33,22 @@
     &.register {
         max-width: 550px;
         flex-basis: 550px;
+        @media only screen and (max-width: 1680px) {
+            max-width: 480px;
+            flex-basis: 480px;
+        }
+        @media only screen and (max-width: 1399px) {
+            max-width: 380px;
+            flex-basis: 380px;
+        }
+        @media only screen and (max-width: 991px) {
+            max-width: 280px;
+            flex-basis: 280px;
+        }
+        @media only screen and (max-width:767px) {
+            max-width: 100%;
+            flex-basis:100%;
+        }
     }
     .top-part {
         padding: 0 40px 135px;
@@ -123,6 +139,22 @@
         &.register {
             max-width: calc(100% - 550px);
             flex-basis: calc(100% - 550px);
+            @media only screen and (max-width: 1680px) {
+                max-width: calc(100% - 480px);
+                flex-basis: calc(100% - 480px);
+            }
+            @media only screen and (max-width: 1399px) {
+                max-width: calc(100% - 380px);
+                flex-basis: calc(100% - 380px);
+            }
+            @media only screen and (max-width: 991px) {
+                max-width: calc(100% - 280px);
+                flex-basis: calc(100% - 280px);
+            }
+            @media only screen and (max-width:767px) {
+                max-width: 100%;
+                flex-basis:100%;
+            }
         }
         @media only screen and (max-width: 1680px) {
             max-width: calc(100% - 570px);

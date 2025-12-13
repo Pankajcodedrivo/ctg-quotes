@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Login from "../pages/auth/Login/Login";
 import VerifyEmail from "../pages/auth/Login/VerifyEmail"
 import VerifySecurityCode from "../pages/auth/Login/VerifySecurityCode"
@@ -19,32 +20,43 @@ import InvitedStep3 from "../pages/auth/Register/IfSomeoneInvitedYou/Step3";
 import InvitedStep5 from "../pages/auth/Register/IfSomeoneInvitedYou/Step5";
 import Step4VehicleEdit from "../pages/auth/Register/IfSomeoneInvitedYou/Step4VehicleEdit"
 import Step4VehicleInformation from "../pages/auth/Register/IfSomeoneInvitedYou/Step4VehicleInformation"
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function AppRoutes() {
+  const location = useLocation();
+  const showHeaderFooter = location.pathname === "/";
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/verify-email" element={<VerifyEmail />} />
-      <Route path="/verify-security-code" element={<VerifySecurityCode />} />
-      <Route path="/step-1" element={<Step1 />} />
-      <Route path="/step-2" element={<Step2 />} />
-      <Route path="/step-3" element={<Step3 />} />
-      <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
-      <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
-      <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />
-      <Route path="/step-5" element={<Step5 />} />
-      <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
-      {/* If Someone Invited You */}
-      <Route path="/invited/step-1" element={<InvitedStep1 />} />
-      <Route path="/invited/step-2" element={<InvitedStep2 />} />
-      <Route path="/invited/step-3" element={<InvitedStep3 />} />
-      <Route path="/invited/step-vehicle-edit" element={<Step4VehicleEdit />} />
-      <Route path="/invited/step-vehicle-information" element={<Step4VehicleInformation />} />
-      <Route path="/invited/step-5" element={<InvitedStep5 />} />
-      
-      <Route path="/register" element={<Register />} />
-      <Route path="/my-profile" element={<MyProfile />} />
-    </Routes>
+    <>
+      {showHeaderFooter && <Header />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      {showHeaderFooter && <Footer />}
+      <Routes>
+        {/* login */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/verify-security-code" element={<VerifySecurityCode />} />
+        {/* register */}
+        <Route path="/step-1" element={<Step1 />} />
+        <Route path="/step-2" element={<Step2 />} />
+        <Route path="/step-3" element={<Step3 />} />
+        <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
+        <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
+        <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />
+        <Route path="/step-5" element={<Step5 />} />
+        <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
+        {/* If Someone Invited You */}
+        <Route path="/invited/step-1" element={<InvitedStep1 />} />
+        <Route path="/invited/step-2" element={<InvitedStep2 />} />
+        <Route path="/invited/step-3" element={<InvitedStep3 />} />
+        <Route path="/invited/step-vehicle-edit" element={<Step4VehicleEdit />} />
+        <Route path="/invited/step-vehicle-information" element={<Step4VehicleInformation />} />
+        <Route path="/invited/step-5" element={<InvitedStep5 />} />
+        {/* my profile */}
+        <Route path="/my-profile" element={<MyProfile />} />
+      </Routes>
+    </>
   );
 }
