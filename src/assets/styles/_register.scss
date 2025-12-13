@@ -778,6 +778,9 @@ p.sub-para {
         gap: 24px;
         flex-direction: column;
         margin-bottom: 24px;
+        &.mb-100 {
+            margin-bottom: 100px;
+        }
         p {
             margin-bottom: 0;
             font-size: 28px;
@@ -910,4 +913,27 @@ p.sub-para {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 100px;
+}
+.mb-70 {
+    margin-bottom: 70px;
+}
+.member-checkbox {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    li {
+        margin-bottom: 50px;
+        .checkbox-container {
+            padding: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.auth-form {
+    .mb-100 {
+        margin-bottom: 100px;
+    }
 }

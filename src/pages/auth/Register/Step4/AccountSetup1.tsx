@@ -8,7 +8,7 @@ import leftArrow from "../../../../assets/images/left-arrow.svg"
 import Icon8 from "../../../../assets/images/icon-8.svg"
 import user from "../../../../assets/images/user.png"
 import plus from "../../../../assets/images/plus.svg"
-const Step4 = () => {
+const AccountSetup1 = () => {
     return (
         <section className="auth-wrapper">
             <LeftPanelRegister title="Family Circle" subtitle="" img={Icon8} />
@@ -51,4 +51,4 @@ const Step4 = () => {
     )
 };
 
-export default Step4;
+export default AccountSetup1;

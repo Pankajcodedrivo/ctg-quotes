@@ -281,6 +281,23 @@ input.form-control:focus {
     input:checked~.checkmark:after {
         display: block;
     }
+    .user-active-img {
+        display: none;
+    }
+    input:checked ~ .family-care-box {
+        background: var(--color-7bf);
+        .user-img {
+            display: none;
+        }
+        .user-active-img {
+            display: block;
+        }
+        .family-care-txt {
+            h3,p {
+                color: var(--color-white);
+            }
+        }
+    }
 }
 .radio-container {
   display: block;

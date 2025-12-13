@@ -9,6 +9,7 @@ import leftArrow from "../../../../assets/images/left-arrow.svg"
 import Icon8 from "../../../../assets/images/icon-8.svg"
 import user from "../../../../assets/images/user.png"
 import plus from "../../../../assets/images/plus.svg"
+import tickIcon from "../../../../assets/images/tick-icon.svg"
 const AccountSetup2 = () => {
     const [active, setActive] = useState("section1");
     return (
@@ -107,15 +108,17 @@ const AccountSetup2 = () => {
                                                             </div>
                                                         )
                                                     }
-                                                    {active === "invite-tab-2" && <p>Features content goes here...</p>}
+                                                    {active === "invite-tab-2" && 
+                                                    (<div></div>)
+                                                    }
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                            <h6 className="invited-bottom"><span><img src="" alt="" /></span>David has been invited</h6>
-                            <div className="add-membar no-back">
+                            <h6 className="invited-bottom"><span><img src={tickIcon} alt="" /></span>David has been invited</h6>
+                            <div className="add-membar no-back mb-100">
                                 <span><img src={plus} alt="" /></span>
                                 <p>Add Member</p>
                             </div>
