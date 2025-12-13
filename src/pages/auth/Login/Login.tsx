@@ -44,9 +44,9 @@ const Login = () => {
                                 </label>
                                 <Link to="/" className="forgot-password">Forgot Password?</Link>
                             </div>
-                        </div>
-                        <div className="text-center mt-40">
-                            <Link to="/" className="btn btn-primary">Login <span><img src={rightArrow} alt="" /></span></Link>
+                            <div className="text-center mt-40">
+                                <Link to="/" className="btn btn-primary">Login <span><img src={rightArrow} alt="" /></span></Link>
+                            </div>
                         </div>
                     </form>
                 </div>

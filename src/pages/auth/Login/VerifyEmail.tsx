@@ -25,9 +25,9 @@ const Login = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="text-center mt-40">
-                            <Link to="/" className="btn btn-primary">Send Security Code <span><img src={rightArrow} alt="" /></span></Link>
+                            <div className="text-center mt-40">
+                                <Link to="/" className="btn btn-primary">Send Security Code <span><img src={rightArrow} alt="" /></span></Link>
+                            </div>
                         </div>
                     </form>
                 </div>
