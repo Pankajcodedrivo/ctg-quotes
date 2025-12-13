@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import Login from "../pages/auth/Login/Login";
 import VerifyEmail from "../pages/auth/Login/VerifyEmail"
 import VerifySecurityCode from "../pages/auth/Login/VerifySecurityCode"
-import Register from "../pages/auth/Register";
 import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
 import ProfileCreationLoader from "../pages/auth/Register/ProfileCreationLoader";
