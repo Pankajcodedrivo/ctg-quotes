@@ -29,25 +29,21 @@ const DashboardHeader = () => {
                         <ul>
                             <li>
                                 <Link to="/">
-                                    <span><img src={list} alt="" /></span>
                                     My Account
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/">
-                                    <span><img src={list} alt="" /></span>
                                     Security
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/">
-                                    <span><img src={list} alt="" /></span>
                                     Settings
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/">
-                                    <span><img src={list} alt="" /></span>
                                     Logout
                                 </Link>
                             </li>

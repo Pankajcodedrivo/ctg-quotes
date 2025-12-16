@@ -3,6 +3,7 @@
 @use './home';
 @use './login';
 @use './register';
+@use './dashboard';
 
 // start varibales
 :root {
@@ -46,6 +47,8 @@ body {
 * {
     padding: 0;
     margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-blue) #fff;
 }
 
 h1,
@@ -222,6 +225,17 @@ input.form-control:focus {
         &:hover {
             border-color: transparent;
             background: var(--color-black);
+        }
+    }
+    &.blue-btn {
+        background: var(--color-blue);
+        color: var(--color-white);
+        font-size: 14px;
+        padding: 15px 18px;
+        &:hover {
+            background: var(--color-black);
+            border-color: transparent;
+            color: var(--color-white);
         }
     }
 }
@@ -486,6 +500,12 @@ select {
     }
 }
 .container {
+    &.sm {
+        @media (min-width:1400px) {
+            max-width: 1484px;
+            padding: 0 20px;
+        }
+    }
     @media (min-width:1400px) {
         max-width: 1820px;
         padding: 0 100px;
