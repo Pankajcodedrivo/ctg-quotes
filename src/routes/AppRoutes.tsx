@@ -22,6 +22,7 @@ import Step4VehicleInformation from "../pages/auth/Register/IfSomeoneInvitedYou/
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MyProfileForm from "../pages/MyProfileForm";
+import FamilyCircle from "../pages/FamilyCircle";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -56,6 +57,7 @@ export default function AppRoutes() {
         <Route path="/invited/step-5" element={<InvitedStep5 />} />
         {/* my profile */}
         <Route path="/my-profile" element={<MyProfile />} />
+        <Route path="/family-circle" element={<FamilyCircle />} />
         <Route path="/my-profile-form" element={<MyProfileForm />} />
       </Routes>
     </>

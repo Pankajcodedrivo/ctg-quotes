@@ -1,3 +1,4 @@
+import { useState } from "react";
 import DashboardHeader from "../components/DashboardHeader";
 import DashboardLeft from "../components/DashboardLeft";
 import edit from "../assets/images/edit-wh.svg"
@@ -9,11 +10,14 @@ import minusIcon from "../assets/images/minus.svg"
 import DashboardFooter from "../components/DashboardFooter";
 
 const MyProfile = () => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const toggleMenu = () => setIsOpen(prev => !prev);
+    const closeMenu = () => setIsOpen(false);
     return (
         <div className="dashboard-wrapper">
-            <DashboardHeader />
+            <DashboardHeader toggleMenu={toggleMenu} />
             <div className="dashboard-body">
-                <DashboardLeft />
+                <DashboardLeft isOpen={isOpen} closeMenu={closeMenu} />
                 <div className="dashboard-right">
                     <div className="dash-hdr">
                         <h3>My Profile</h3>
@@ -28,7 +32,7 @@ const MyProfile = () => {
                             <h3 className="mb-0 black">Members</h3>
                         </div>
                         <div className="row g-6">
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-sm-6">
                                 <div className="member-box-innr">
                                     <span className="minus-icon"><img src={minusIcon} alt="" /></span>
                                     <div className="mb-4">
@@ -44,7 +48,7 @@ const MyProfile = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-sm-6">
                                 <div className="member-box-innr">
                                     <span className="minus-icon"><img src={minusIcon} alt="" /></span>
                                     <div className="mb-4">
@@ -58,7 +62,7 @@ const MyProfile = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-sm-6">
                                 <div className="member-box-innr">
                                     <span className="minus-icon"><img src={minusIcon} alt="" /></span>
                                     <div className="mb-4">
@@ -72,7 +76,7 @@ const MyProfile = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-sm-6">
                                 <div className="member-box-innr more">
                                     <span><img src={plus} alt="" /></span>
                                 </div>
@@ -84,7 +88,7 @@ const MyProfile = () => {
                     </div>
                     <div className="mb-32">
                         <div className="row g-6">
-                            <div className="col-md-5">
+                            <div className="col-xxl-5">
                                 <div className="cmn-box">
                                     <span className="minus-icon right"><img src={minusIcon} alt="" /></span>
                                     <div className="cmnbox-top">
@@ -116,7 +120,7 @@ const MyProfile = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-5">
+                            <div className="col-xxl-5">
                                 <div className="cmn-box flex">
                                     <span><img src={plus} alt="" /></span>
                                 </div>
@@ -127,7 +131,7 @@ const MyProfile = () => {
                         <h3 className="mb-0 black">Vehicles</h3>
                     </div>
                     <div className="row g-6">
-                        <div className="col-md-5">
+                        <div className="col-xxl-5">
                             <div className="cmn-box">
                                 <span className="minus-icon right"><img src={minusIcon} alt="" /></span>
                                 <div className="cmnbox-top">
@@ -158,7 +162,7 @@ const MyProfile = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-xxl-5">
                             <div className="cmn-box">
                                 <span className="minus-icon right"><img src={minusIcon} alt="" /></span>
                                 <div className="cmnbox-top">
@@ -189,7 +193,7 @@ const MyProfile = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-xxl-5">
                             <div className="cmn-box">
                                 <span className="minus-icon right"><img src={minusIcon} alt="" /></span>
                                 <div className="cmnbox-top">
@@ -220,12 +224,12 @@ const MyProfile = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-xxl-5">
                             <div className="cmn-box flex">
                                 <span><img src={plus} alt="" /></span>
                             </div>
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-xxl-5">
                             <div className="cmn-box">
                                 <span className="minus-icon edit"><img src={edit} alt="" /></span>
                                 <div className="cmnbox-top">
@@ -256,7 +260,7 @@ const MyProfile = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-xxl-5">
                             <div className="cmn-box flex">
                                 <span><img src={plus} alt="" /></span>
                             </div>

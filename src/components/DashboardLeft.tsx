@@ -1,3 +1,7 @@
+interface DashboardLeftProps {
+  isOpen: boolean;
+  closeMenu: () => void;
+}
 import { Link } from "react-router-dom";
 import dIcon1 from "../assets/images/d-icon-1.svg"
 import dIcon2 from "../assets/images/d-icon-2.svg"
@@ -6,9 +10,11 @@ import dIcon4 from "../assets/images/d-icon-4.svg"
 import dIcon5 from "../assets/images/d-icon-5.svg"
 import dIcon6 from "../assets/images/d-icon-6.svg"
 import dIcon7 from "../assets/images/d-icon-7.svg"
-const DashboardLeft = () => {
+import close from "../assets/images/cross.svg"
+const DashboardLeft: React.FC<DashboardLeftProps> = ({ isOpen, closeMenu }) => {
     return (
-        <div className="dashboard-left">
+        <div className={`dashboard-left ${isOpen ? "open" : ""}`}>
+            <button className="close-icon" onClick={closeMenu}><img src={close} alt="" /></button>
             <ul className="mb-5">
                 <li>
                     <Link to="/">
