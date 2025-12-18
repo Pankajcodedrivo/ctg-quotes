@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import DashboardFooter from "../components/DashboardFooter";
 import DashboardHeader from "../components/DashboardHeader";
 import rightArrow from "../assets/images/right-arrow.svg"
 const MyProfileForm = () => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const toggleMenu = () => setIsOpen(prev => !prev);
+    const closeMenu = () => setIsOpen(false);
     return (
         <div className="dashboard-wrapper">
-            <DashboardHeader />
+            <DashboardHeader toggleMenu={toggleMenu} />
             <div className="my-profile-form">
                 <div className="container sm">
                     <div className="my-profile-form-hdr">
