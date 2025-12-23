@@ -23,6 +23,7 @@
     --color-3d:#3D3D3D;
     --color-4b:#4B4B4B;
     --color-ce:#CECECE;
+    --font-24:24px;
 }
 // end variables
 
@@ -232,6 +233,15 @@ input.form-control:focus {
         color: var(--color-white);
         font-size: 14px;
         padding: 15px 18px;
+        &:hover {
+            background: var(--color-black);
+            border-color: transparent;
+            color: var(--color-white);
+        }
+    }
+    &.green-btn {
+        background: #2ECC71;
+        color: var(--color-white);
         &:hover {
             background: var(--color-black);
             border-color: transparent;

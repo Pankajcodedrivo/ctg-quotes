@@ -5,6 +5,7 @@ import DashboardFooter from "../components/DashboardFooter";
 import home from "../assets/images/home-icon.svg"
 import profileMale from "../assets/images/avtar-male.png"
 import profileFemale from "../assets/images/avtar-female.png"
+import profileImg from "../assets/images/avtar-lg.png"
 import eye from "../assets/images/eye.svg"
 import upload from "../assets/images/upload.svg"
 import edit from "../assets/images/edit-sm.svg"
@@ -32,9 +33,9 @@ const FamilyCircle = () => {
                     </div>
                     <div className="family-circle-bottom">
                         <div className="family-circle-box">
-                            <div className="row">
-                                <div className="col-md-3">
-                                    <div className="family-circle-box-wrapper">
+                            <div className="row align-items-center">
+                                <div className="col-md-3 inner-box">
+                                    <div className="family-circle-box-wrapper box-1">
                                         <div className="family-circle-box-top">
                                             <figure><img src={profileMale} alt="" /></figure>
                                             <div className="family-circle-box-hover">
@@ -48,7 +49,7 @@ const FamilyCircle = () => {
                                             <span className="badge">Linked Account</span>
                                         </div>
                                     </div>
-                                    <div className="family-circle-box-wrapper">
+                                    <div className="family-circle-box-wrapper box-2">
                                         <div className="family-circle-box-top">
                                             <figure><img src={profileFemale} alt="" /></figure>
                                             <div className="family-circle-box-hover">
@@ -58,16 +59,20 @@ const FamilyCircle = () => {
                                             </div>
                                         </div>
                                         <div className="family-circle-box-bottom">
-                                            <h5>David</h5>
-                                            <span className="badge">Linked Account</span>
+                                            <h5>Selena</h5>
+                                            <span className="badge">Added Manually</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-6">
-                                    
+                                <div className="col-md-6 inner-box-2">
+                                    <figure className="pro-img"><img src={profileImg} alt="" /></figure>
+                                    <div className="pro-txt">
+                                        <h5>You</h5>
+                                        <p>Main Insured</p>
+                                    </div>
                                 </div>
-                                <div className="col-md-3">
-                                    <div className="family-circle-box-wrapper">
+                                <div className="col-md-3 inner-box">
+                                    <div className="family-circle-box-wrapper box-3">
                                         <div className="family-circle-box-top">
                                             <figure><img src={profileMale} alt="" /></figure>
                                             <div className="family-circle-box-hover">
@@ -77,11 +82,11 @@ const FamilyCircle = () => {
                                             </div>
                                         </div>
                                         <div className="family-circle-box-bottom">
-                                            <h5>David</h5>
+                                            <h5>Carlos</h5>
                                             <span className="badge">Linked Account</span>
                                         </div>
                                     </div>
-                                    <div className="family-circle-box-wrapper">
+                                    <div className="family-circle-box-wrapper box-4">
                                         <div className="family-circle-box-top">
                                             <figure><img src={profileMale} alt="" /></figure>
                                             <div className="family-circle-box-hover">
@@ -91,8 +96,8 @@ const FamilyCircle = () => {
                                             </div>
                                         </div>
                                         <div className="family-circle-box-bottom">
-                                            <h5>David</h5>
-                                            <span className="badge">Linked Account</span>
+                                            <h5>Glenn</h5>
+                                            <span className="badge pending">Pending Invite</span>
                                         </div>
                                     </div>
                                 </div>
