@@ -24,6 +24,18 @@
     --color-4b:#4B4B4B;
     --color-ce:#CECECE;
     --font-24:24px;
+    @media only screen and (max-width: 1680px) {
+        --font-24:19px;
+    }
+    @media only screen and (max-width: 1399px) {
+        --font-24:17px;
+    }
+    @media only screen and (max-width: 1199px) {
+        --font-24:16px;
+    }
+    @media only screen and (max-width: 767px) {
+        --font-24:14px;
+    }
 }
 // end variables
 

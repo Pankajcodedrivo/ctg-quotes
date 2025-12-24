@@ -169,6 +169,9 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 20px;
+  &.left-space {
+    padding-left: 12px;
+  }
 }
 
 .dash-hdr {
@@ -195,6 +198,10 @@
     font-weight: 400;
     color: #7B7B7B;
     margin-bottom: 0;
+    &.font-16 {
+      font-size: 16px;
+      color: #1C1C1C;
+    }
   }
 }
 
@@ -358,7 +365,9 @@
   box-shadow: 0px 0px 20px 0px #0000001A;
   height: 100%;
   position: relative;
-
+  &.p-40 {
+    padding: 40px;
+  }
   &.flex {
     display: flex;
     align-items: center;
@@ -461,8 +470,11 @@
 
 .dashboard-footer {
   text-align: center;
-  padding: 40px 0;
-
+  padding: 40px;
+  .dashboard-footer-content {
+      max-width: calc(100% - 322px);
+      margin-left: auto;
+  }
   p {
     font-size: 16px;
     margin-bottom: 0;
@@ -1013,6 +1025,7 @@ p.form-txt.mt-45 {
 
 .clr-3d {
   color: #3D3D3D;
+  margin-bottom: 0;
 }
 
 .quotes-box-innr {
@@ -1205,6 +1218,7 @@ p.form-txt.mt-45 {
 }
 
 .vehicle-tab {
+  display: block;
   gap: 28px;
 
   &.nav-pills .nav-link.active,
@@ -1342,9 +1356,25 @@ p.form-txt.mt-45 {
 }
 
 .vehicle-tab-innr {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+  // display: flex;
+  // align-items: center;
+  // gap: 24px;
+  max-width: 700px;
+  padding-bottom: 3px;
+  .slick-prev {
+  display: none!important;
+}
+.slick-next {
+  right: -20px;
+  background: url('../images/arrow-right-gray.svg') no-repeat;
+  background-size:100% 100%;
+  color: #7B7B7B;
+  width: 13px;
+  height: 13px;
+  &::before {
+    display: none;
+  }
+}
 }
 
 .cursor-pointer {
@@ -1369,7 +1399,7 @@ p.form-txt.mt-45 {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-
+  overflow-y: auto;
   p {
     margin-bottom: 0;
     color: #3D3D3D;
@@ -1477,7 +1507,23 @@ p.form-txt.mt-45 {
 
 .quote-sent {
   margin-bottom: 32px;
-
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  select {
+    border: 0;
+    padding: 0;
+    background: url('../images/down-arrow-blk.svg') no-repeat;
+    background-size: auto;
+    background-position: right center;
+    appearance: none;
+    color: #3D3D3D;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    padding-right: 30px;
+    cursor: pointer;
+  }
   p {
     margin-bottom: 0;
     color: #3D3D3D;
@@ -1485,6 +1531,11 @@ p.form-txt.mt-45 {
     font-weight: 600;
     display: flex;
     gap: 12px;
+    line-height: 1;
+    align-items: center;
+    span {
+      padding-bottom: 5px;
+    }
   }
 }
 
@@ -1529,6 +1580,7 @@ p.form-txt.mt-45 {
       position: sticky;
       top: 0;
       background: var(--color-white);
+      z-index: 5;
     }
 
     .chat-left-bottom {
@@ -1583,6 +1635,9 @@ p.form-txt.mt-45 {
           font-weight: 600;
           color: var(--color-black);
           margin-bottom: 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
         }
 
         p {
@@ -1590,10 +1645,27 @@ p.form-txt.mt-45 {
           font-size: 14px;
           font-weight: 400;
           margin-bottom: 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
         }
       }
 
       .chat-list-img {
+        position: relative;
+        .status {
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          display: inline-block;
+          bottom: 2px;
+          right: 1px;
+          position: absolute;
+          &.active {
+            border: 2px solid var(--color-black);
+            background: #41D37E;
+          }
+        }
         figure {
           margin-bottom: 0;
           width: 50px;
@@ -1633,6 +1705,7 @@ p.form-txt.mt-45 {
     position: sticky;
     top: 0;
     background: var(--color-white);
+    z-index: 10;
     .chat-right-wrapper {
       display: flex;
       align-items: center;
@@ -1660,6 +1733,9 @@ p.form-txt.mt-45 {
           font-weight: 600;
           color: var(--color-black);
           margin-bottom: 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
         }
       }
     }
@@ -1736,14 +1812,159 @@ p.form-txt.mt-45 {
     }
   }
 }
+.chat-send {
+  padding: 56px 24px;
+  background: var(--color-white);
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  .chat-send-form {
+    position: relative;
+    border: 1px solid #DADADA;
+    background: var(--color-white);
+    border-radius: 20px;
+    height: 104px;
+    width: 100%;
+    padding: 10px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    textarea,input {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      height: 100%;
+      width: calc(100% - 150px);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    .attach-btn-innr {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      button {
+        border: 0;
+        background: transparent;
+        padding: 0;
+      }
+    }
+  }
+}
+.my-documents {
+  .form-control {
+    font-size: 14px;
+  }
+  select {
+    &.form-control {
+      background-image: url('../images/down-arrow.svg');
+    }
+  }
+  .form-control[type="file"] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #4B4B4B;
+  }
+}
 
-
-
-
-
-
-
-
+.add-doc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  .btn {
+    height: 60px;
+    &.btn-primary {
+      background: var(--color-blue);
+    }
+    &.btn-secondary {
+      color: var(--color-white);
+      background: #9B9B9B;
+    }
+  }
+}
+.side-group {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  .form-group {
+    max-width: calc(100% - 227px);
+    flex-basis: calc(100% - 227px);
+    padding-right: 24px;
+  }
+  .add-doc-btn {
+    max-width: 227px;
+    flex-basis: 227px;
+  }
+}
+.s-hdr {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1C1C1C;
+}
+.shadow-box {
+  box-shadow: 0px 0px 20px 0px #0000001A;
+  border-radius: 24px;
+  background: var(--color-white);
+  padding: 40px;
+  &.blue-border {
+    border: 1px solid #3F85D8;
+    background: transparent;
+    box-shadow: none;
+  }
+  &.notification-box {
+    padding: 30px 40px;
+  }
+}
+.notification-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1C1C1C;
+    margin-bottom: 5px;
+  }
+  p {
+    font-size: 14px;
+    color: #4B4B4B;
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+}
+.cross-icon {
+  max-width: 10px;
+  cursor: pointer;
+}
+.notification-hdr {
+  margin-bottom: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .btn.red-btn {
+    background-color: #F32226;
+  }
+}
+.my-account {
+  h5 {
+    color: #0A65FF;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+.hg-60 {
+  height: 60px;
+}
 
 
 
@@ -1843,6 +2064,100 @@ p.form-txt.mt-45 {
     padding: 20px 40px;
     font-size: 20px;
   }
+  .quotes-box-innr .quote-logo-innr {
+    span {
+      img {
+        width: 180px;
+      }
+    }
+  }
+  .quotes-box-innr .quotes-box-top .quotes-btn-group .btn {
+  min-width: 145px;
+  font-size: 20px;
+  padding: 18px;
+}
+.quotes-box-bottom li p {
+  font-size: 20px;
+}
+.quotes-box-innr .quote-logo-innr .declined-txt,.quotes-box-innr .quote-logo-innr .current-carrier-txt {
+  font-size: 23px;
+}
+ .quote-sent p,.quote-sent select {
+  font-size: 25px;
+ }
+ .prog-logo {
+  width: 320px;
+}
+.details-top .btn {
+  min-width: 240px;
+}
+.details-list li,.card-wrapper .vehicle-main,.coverage-grid li p,.note-box label {
+  font-size: 18px;
+}
+.coverage-grid li p span ,.note-box .form-control{
+  font-size: 15px;
+}
+.vehicle-tab {
+  gap: 15px;
+}
+.price-btn-innr .price-btn {
+  padding: 18px;
+  font-size: 20px;
+}
+.vehicle-tab-innr {
+  max-width: 600px;
+}
+.quote-loader p {
+  font-size: 22px;
+}
+.chat-screen .chat-left .chat-left-top {
+  padding: 20px 15px;
+}
+.chat-screen .chat-left h3,.chat-right .chat-right-top .chat-right-wrapper .chat-right-txt h3 {
+  font-size: 24px;
+}
+.chat-screen .chat-left .chat-left-bottom {
+  padding: 10px 15px 20px;
+}
+.chat-list li {
+  margin-bottom: 20px;
+}
+.chat-list li .chat-list-left .chat-list-txt h4 {
+  font-size: 14px;
+}
+.chat-list li .chat-list-left .chat-list-txt p {
+  font-size: 12px;
+}
+.chat-right .chat-right-top {
+  padding: 20px 16px;
+}
+.chat-send {
+  padding: 40px 16px;
+}
+.chat-right .chat-right-bottom {
+  padding: 30px 16px;
+}
+.chat-send .chat-send-form {
+  height: 90px;
+  padding: 10px 25px;
+}
+.chat-right-bottom .message p {
+  font-size: 18px;
+  padding: 10px 18px;
+}
+.chat-right-bottom .time {
+  font-size: 14px;
+}
+.chat-send .chat-send-form .attach-btn-innr {
+  gap: 25px;
+}
+.chat-list li .chat-list-left {
+  gap: 10px;
+}
+.chat-list li .chat-list-left .chat-list-img figure {
+  width: 42px;
+  height: 42px;
+}
 }
 
 @media only screen and (max-width: 1399px) {
@@ -1949,6 +2264,61 @@ p.form-txt.mt-45 {
       width: 18px;
     }
   }
+  .quotes-box-innr .quotes-box-top,.quotes-box-bottom li {
+  padding: 20px 25px;
+}
+ .quotes-box-bottom li p {
+    font-size: 17px;
+  }
+   .quotes-box-innr .quote-logo-innr .declined-txt,.quotes-box-innr .quote-logo-innr .current-carrier-txt {
+    font-size: 18px;
+  }
+  .quotes-box-innr .quote-logo-innr {
+  gap: 14px;
+}
+.quote-sent p,.quote-sent select {
+  font-size: 21px;
+ }
+ .quote-sent p {
+  span {
+    width: 15px;
+  }
+ }
+ .prog-logo {
+  width: 240px;
+}
+  .details-top .btn {
+    min-width: 200px;
+  }
+    .details-list li, .card-wrapper .vehicle-main, .coverage-grid li p, .note-box label {
+    font-size: 16px;
+  }
+  .btn-wrap {
+  gap: 20px;
+}
+.dashboard-right .card {
+  padding: 20px;
+}
+.btn {
+    padding: 20px 25px;
+  }
+  .vehicle-tab {
+    gap: 10px;
+  }
+  .price-btn-innr .price-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+  .vehicle-tab-innr {
+  gap: 15px;
+}
+.vehicle-tab-innr {
+  max-width: 500px;
+}
+.chat-screen .chat-left h3, .chat-right .chat-right-top .chat-right-wrapper .chat-right-txt h3 {
+    font-size: 19px;
+  }
+
 }
 
 @media only screen and (max-width: 1199px) {
@@ -2052,6 +2422,96 @@ p.form-txt.mt-45 {
   .family-circle-box-wrapper.box-2::after {
     bottom: calc(100% - 94px);
   }
+  .dashboard-footer .dashboard-footer-content {
+  max-width: 100%;
+  margin-left: 0;
+}
+  .dashboard-footer {
+    padding: 30px 15px;
+  }
+   .quotes-box-innr .quotes-box-top .quotes-btn-group .btn {
+    min-width: 112px;
+    font-size: 16px;
+    padding: 15px;
+  }
+   .quotes-box-innr .quote-logo-innr span img {
+    width: 140px;
+  }
+  .quotes-box-bottom li p {
+    font-size: 15px;
+  }
+  .quotes-box-innr .quote-logo-innr .declined-txt, .quotes-box-innr .quote-logo-innr .current-carrier-txt {
+    font-size: 15px;
+  }
+    .quotes-box-innr .quotes-box-top, .quotes-box-bottom li {
+    padding: 15px 15px;
+  }
+  .dash-hdr {
+  margin-bottom: 15px;
+}
+  .details-top .btn {
+    min-width: 170px;
+  }
+  .details-top {
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.btn-wrap {
+  justify-content: start;
+}
+.mb-column {
+  flex-direction: column;
+  align-items: flex-start!important;
+}
+ .vehicle-tab-innr {
+    max-width: 90%;
+  }
+  .price-btn-innr {
+    margin-bottom: 20px;
+  }
+  .coverage-grid li {
+  padding: 16px 20px 16px 0;
+  }
+  .coverage-grid li:nth-child(2n) {
+  padding-left: 20px;
+}
+.quote-loader {
+  height: auto;
+  padding: 40px;
+}
+ .quote-loader p {
+    font-size: 18px;
+  }
+  .chat-right .chat-right-top .chat-right-wrapper .chat-right-img figure {
+    width: 50px;
+    height: 50px;
+  }
+  .chat-dropdown .dropdown-toggle {
+  width: 50px;
+  height: 50px;
+  img {
+    width: 5px;
+  }
+  }
+   .chat-send {
+    padding: 20px 16px;
+  }
+   .chat-send .chat-send-form {
+    height: 70px;
+    padding: 10px 15px;
+  }
+  .attach-btn img {
+  width: 24px;
+}
+.send-btn img {
+  width: 40px;
+}
+.chat-send .chat-send-form .attach-btn-innr {
+    gap: 15px;
+  }
+  .chat-send .chat-send-form textarea, .chat-send .chat-send-form input {
+    width: calc(100% - 90px);
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -2150,6 +2610,59 @@ p.form-txt.mt-45 {
     flex-direction: column;
     text-align: center;
   }
+    .dashboard-footer {
+    padding: 20px 15px;
+  }
+  .quotes-box-innr .quotes-box-top {
+    gap: 10px;
+  }
+   .quotes-box-innr .quote-logo-innr span img {
+    width: 105px;
+  }
+   .quotes-box-innr .quotes-box-top .quotes-btn-group .btn {
+    min-width: 85px;
+    font-size: 15px;
+    padding: 12px;
+  }
+  .quotes-box-innr .quotes-box-top .quotes-btn-group {
+  gap: 8px;
+}
+  .quotes-box-bottom li p {
+    font-size: 14px;
+  }
+   .quotes-box-innr .quote-logo-innr .declined-txt, .quotes-box-innr .quote-logo-innr .current-carrier-txt {
+    font-size: 14px;
+  }
+   .quote-sent p,.quote-sent select {
+    font-size: 18px;
+  }
+  .quote-sent select {
+    background-size: 15px;
+    padding-right: 24px;
+  }
+  .pdf-innr {
+  gap: 15px;
+  margin-bottom: 20px!important;
+}
+.card-wrapper {
+  padding: 24px;
+}
+.chat-right-bottom .message p {
+    font-size: 15px;
+}
+.chat-right-bottom .time {
+    font-size: 12px;
+  }
+  .chat-right .chat-right-top .chat-right-wrapper {
+  gap: 10px;
+}
+.chat-right .chat-right-top .chat-right-wrapper .chat-right-txt h3 {
+  width: 100px;
+}
+.chat-list li .chat-list-left .chat-list-txt h4,.chat-list li .chat-list-left .chat-list-txt p {
+  width: 90px;
+}
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -2335,6 +2848,78 @@ p.form-txt.mt-45 {
   .family-circle-box {
     max-width: 380px;
   }
+    .details-list li, .card-wrapper .vehicle-main, .coverage-grid li p, .note-box label {
+    font-size: 15px;
+  }
+  .coverage-grid li {
+  width: 100%;
+  }
+    .coverage-grid li:nth-child(2n) {
+    padding-left: 0;
+  }
+  .card-wrapper {
+  padding: 22px;
+  margin: 0 4px;
+}
+.note-box .form-control {
+  height: 101px;
+  padding: 14px 20px;
+}
+ .coverage-grid li {
+    padding: 12px 20px 12px 0;
+  }
+  .mb-column-sm {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .align-items-end {
+  align-items: flex-start !important;
+}
+.text-end.details-right {
+  text-align: left !important;
+}
+.dots-loader span:nth-child(8) {
+  width: 23px;
+  height: 23px;
+}
+.dots-loader span:nth-child(7) {
+  width: 20px;
+  height: 20px;
+}
+.dots-loader span:nth-child(6) {
+  width: 17px;
+  height: 17px;
+}
+.dots-loader span:nth-child(5) {
+  width: 15px;
+  height: 15px;
+}
+.dots-loader span:nth-child(4) {
+  width: 12px;
+  height: 12px;
+}
+.dots-loader span:nth-child(3) {
+  width: 10px;
+  height: 10px;
+}
+.dots-loader span:nth-child(2) {
+  width: 8px;
+  height: 8px;
+}
+.dots-loader span:nth-child(1) {
+  width: 6px;
+  height: 6px;
+}
+.chat-screen .h-100 ,.chat-screen .chat-left,.chat-right,.chat-screen{
+  height: auto!important;
+}
+.chat-screen .chat-left {
+  border-right: 0;
+  border-bottom: 1px solid #C2C2C2;
+}
+.dashboard-right.left-space {
+  padding-left: 0;
+}
 }
 
 @media only screen and (max-width: 575px) {
@@ -2410,6 +2995,27 @@ p.form-txt.mt-45 {
     font-size: 13px;
     padding: 12px 12px;
   }
+  .quotes-box-bottom li {
+  gap: 12px;
+  flex-direction: column;
+  text-align: center;
+}
+ .quotes-box-innr .quotes-box-top {
+    flex-direction: column;
+  }
+    .quotes-box-innr .quote-logo-innr {
+    gap: 9px;
+  }
+  .quotes-box-bottom li p {
+    font-size: 13px;
+  }
+  .mb-center {
+    text-align: center;
+    .quote-sent {
+      justify-content: center;
+    }
+  }
+  
 }
 
 @media only screen and (max-width: 420px) {
@@ -2464,6 +3070,30 @@ p.form-txt.mt-45 {
 
     img {
       width: 24px;
+    }
+  }
+    .quote-sent p,.quote-sent select {
+    font-size: 15px;
+  }
+   .quote-sent p span {
+    width: 11px;
+    padding-bottom: 2px;
+  }
+    .quote-sent select {
+    background-size: 12px;
+    padding-right: 20px;
+  }
+  .quote-sent {
+  margin-bottom: 25px;
+  }
+   .details-top .btn {
+    min-width: 140px;
+  }
+   .btn-wrap {
+    gap: 10px;
+    flex-direction: column;
+    .btn {
+      width: 100%;
     }
   }
 }

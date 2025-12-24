@@ -5,7 +5,6 @@ import DashboardLeft from "../components/DashboardLeft";
 import DashboardFooter from "../components/DashboardFooter";
 import logo1 from "../assets/images/lgo-1.png";
 import logo2 from "../assets/images/lgo-2.png";
-import downArrow from "../assets/images/down-arrow-blk.svg";
 
 const MyQuotes = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,17 +16,25 @@ const MyQuotes = () => {
             <div className="dashboard-body">
                 <DashboardLeft isOpen={isOpen} closeMenu={closeMenu} />
                 <div className="dashboard-right">
-                    <div className="dash-hdr">
-                        <h3>Welcome back, Maria!</h3>
+                    <div className="mb-center">
+                        <div className="dash-hdr">
+                            <h3>Welcome back, Maria!</h3>
+                        </div>
+                        <div className="mb-4 flex-sm-row flex-column d-sm-flex align-items-center justify-content-between">
+                            <h4 className="clr-3d">Your Current Quotes</h4>
+                            <Link to="" className="quote-history">Quote History &gt;</Link>
+                        </div>
+                        {/* quote sent */}
+                        {/* <div className="quote-sent">
+                            <p>Quotes sent on 
+                            </p>
+                            <select name="" id="">
+                                <option value="1">11/14/2025</option>
+                                <option value="2">11/14/2025</option>
+                                <option value="3">11/14/2025</option>
+                            </select>
+                        </div> */}
                     </div>
-                    <div className="mb-4 d-flex align-items-center justify-content-between">
-                        <h4 className="clr-3d">Your Current Quotes</h4>
-                        <Link to="" className="quote-history">Quote History &gt;</Link>
-                    </div>
-                    {/* quote sent */}
-                    {/* <div className="quote-sent">
-                        <p>Quotes sent on 11/14/2025 <span><img src={downArrow} alt="" /></span></p>
-                    </div> */}
                     <div className="quotes-box-otr">
                         <div className="quotes-box-innr">
                             <div className="quotes-box-top">

@@ -7,6 +7,8 @@ import chatImg2 from "../assets/images/img-2.jpg"
 import chatImg3 from "../assets/images/img-3.jpg"
 import chatImg4 from "../assets/images/img-4.jpg"
 import dotIcon from "../assets/images/dot-icon.png"
+import attach from "../assets/images/iconoir_attachment.svg"
+import send from "../assets/images/send.svg"
 import { Link } from "react-router-dom";
 
 const Messages = () => {
@@ -18,10 +20,10 @@ const Messages = () => {
             <DashboardHeader toggleMenu={toggleMenu} />
             <div className="dashboard-body">
                 <DashboardLeft isOpen={isOpen} closeMenu={closeMenu} />
-                <div className="dashboard-right pb-0">
+                <div className="dashboard-right pb-0 left-space">
                     <div className="chat-screen">
                         <div className="row h-100 m-0">
-                            <div className="col-md-3 h-100 p-0">
+                            <div className="col-xxl-3 col-xl-4 col-lg-5 col-md-6 h-100 p-0">
                                 <div className="chat-left">
                                     <div className="chat-left-top">
                                         <h3>Messages</h3>
@@ -35,6 +37,7 @@ const Messages = () => {
                                                 <div className="chat-list-left">
                                                     <div className="chat-list-img">
                                                         <figure><img src={chatImg1} alt="" /></figure>
+                                                        <span className="status active"></span>
                                                     </div>
                                                     <div className="chat-list-txt">
                                                         <h4>Killan James</h4>
@@ -76,7 +79,7 @@ const Messages = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-9 h-100 p-0">
+                            <div className="col-xxl-9 col-xl-8 col-lg-7 col-md-6 h-100 p-0">
                                 <div className="chat-right">
                                     <div className="chat-right-top">
                                         <div className="chat-right-wrapper">
@@ -112,6 +115,15 @@ const Messages = () => {
                                                 </div>
                                             </div>
                                             <span className="time">Today, 8.33pm</span>
+                                        </div>
+                                    </div>
+                                    <div className="chat-send">
+                                        <div className="chat-send-form">
+                                            <input type="text" placeholder="Type a message ..." />
+                                            <div className="attach-btn-innr">
+                                                <button type="button" className="attach-btn"><img src={attach} alt="" /></button>
+                                                <button type="submit" className="send-btn"><img src={send} alt="" /></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

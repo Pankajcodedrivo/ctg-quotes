@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Slider from "react-slick";
 import DashboardHeader from "../components/DashboardHeader";
 import DashboardLeft from "../components/DashboardLeft";
 import DashboardFooter from "../components/DashboardFooter";
@@ -12,6 +13,47 @@ const MyQuotesDetails = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const toggleMenu = () => setIsOpen(prev => !prev);
     const closeMenu = () => setIsOpen(false);
+    const settings = {
+    dots: false,
+    arrows:true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: false,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
     return (
         <div className="dashboard-wrapper">
             <DashboardHeader toggleMenu={toggleMenu} />
@@ -23,7 +65,7 @@ const MyQuotesDetails = () => {
                         <button type="button" className="btn green-btn">Buy Quote <span><img src={arrowRight} alt="" /></span></button>
                     </div>
                     <div className="card mb-40">
-                        <div className="card-body d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div className="d-flex justify-content-between align-items-center flex-wrap gap-3">
                             <div>
                                 <div className="dash-hdr">
                                     <h3 className="font-wight-600">Lone Star Agency Group</h3>
@@ -54,16 +96,18 @@ const MyQuotesDetails = () => {
                         <div className="dash-hdr">
                             <h3 className="font-wight-600">Auto Insurance</h3>
                         </div>
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex justify-content-between align-items-center mb-column">
                             <div className="vehicle-tab-innr">
-                                <ul className="nav nav-pills vehicle-tab">
-                                    <li className="nav-item"><button className="nav-link active" type="button" data-bs-target="#tab-1" data-bs-toggle="pill">Vehicle 1</button></li>
-                                    <li className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-2" data-bs-toggle="pill">Vehicle 2</button></li>
-                                    <li className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-3" data-bs-toggle="pill">Vehicle 3</button></li>
-                                    <li className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-4" data-bs-toggle="pill">Vehicle 4</button></li>
-                                    <li className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-5" data-bs-toggle="pill">Vehicle 5</button></li>
-                                </ul>
-                                <span className="cursor-pointer"><img src={arrowRightGray} alt="" /></span>
+                                    <Slider {...settings} className="nav nav-pills vehicle-tab">
+                                        <div className="nav-item"><button className="nav-link active" type="button" data-bs-target="#tab-1" data-bs-toggle="pill">Vehicle 1</button></div>
+                                        <div className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-2" data-bs-toggle="pill">Vehicle 2</button></div>
+                                        <div className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-3" data-bs-toggle="pill">Vehicle 3</button></div>
+                                        <div className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-4" data-bs-toggle="pill">Vehicle 4</button></div>
+                                        <div className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-5" data-bs-toggle="pill">Vehicle 5</button></div>
+                                        <div className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-6" data-bs-toggle="pill">Vehicle 6</button></div>
+                                        <div className="nav-item"><button className="nav-link" type="button" data-bs-target="#tab-7" data-bs-toggle="pill">Vehicle 7</button></div>
+                                    </Slider>
+                                {/* <span className="cursor-pointer"><img src={arrowRightGray} alt="" /></span> */}
                             </div>
                             <div className="price-btn-innr">
                                 <span className="price-btn active">$245/month</span>
@@ -128,9 +172,17 @@ const MyQuotesDetails = () => {
                                 <h3>Menu 5</h3>
                                 <p>Some content in menu 5.</p>
                             </div>
+                            <div id="tab-6" className="tab-pane fade">
+                                <h3>Menu 6</h3>
+                                <p>Some content in menu 6.</p>
+                            </div>
+                            <div id="tab-7" className="tab-pane fade">
+                                <h3>Menu 7</h3>
+                                <p>Some content in menu 7.</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-between align-items-end">
+                    <div className="d-flex justify-content-between align-items-end mb-column-sm">
                         <div>
                             <div className="dash-hdr mb-0">
                                 <h3 className="font-wight-600 mb-1">Home Insurance</h3>

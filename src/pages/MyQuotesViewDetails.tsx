@@ -23,7 +23,7 @@ const MyQuotesViewDetails = () => {
                         <button type="button" className="btn green-btn">Buy Quote <span><img src={arrowRight} alt="" /></span></button>
                     </div>
                     <div className="card mb-40">
-                        <div className="card-body d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div className="d-flex justify-content-between align-items-center flex-wrap gap-3">
                             <div>
                                 <div className="dash-hdr">
                                     <h3 className="font-wight-600">Lone Star Agency Group</h3>
@@ -51,7 +51,7 @@ const MyQuotesViewDetails = () => {
                         </div>
                     </div>
                     <div className="border-b">
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex justify-content-between align-items-center  mb-column-sm">
                             <div>
                                 <div className="dash-hdr mb-0 pdf-innr">
                                     <h3 className="font-wight-600 mb-0">Condo</h3>
@@ -98,7 +98,7 @@ const MyQuotesViewDetails = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex justify-content-between align-items-center  mb-column-sm">
                         <div>
                             <div className="dash-hdr mb-0 pdf-innr">
                                 <h3 className="font-wight-600 mb-0">Landlord</h3>
