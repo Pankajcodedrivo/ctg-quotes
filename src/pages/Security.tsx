@@ -20,21 +20,23 @@ const Security = () => {
                         <p className="font-16">Manage your security settings with ease.</p>
                     </div>
                     <div className="shadow-box my-account">
-                        <h5>Change Email</h5>
-                        <div className="row align-items-end mb-4">
-                            <div className="col-md-6">
-                                <div className="form-group mb-0">
-                                    <label className="form-label float">Email Address</label>
-                                    <input type="email" className="form-control" placeholder="selena.ram@yahoo.com" />
+                        <div className="mbl-30">
+                            <h5>Change Email</h5>
+                            <div className="row align-items-end mb-4 gy-2">
+                                <div className="col-lg-6 col-md-8">
+                                    <div className="form-group mb-0">
+                                        <label className="form-label float">Email Address</label>
+                                        <input type="email" className="form-control" placeholder="selena.ram@yahoo.com" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-md-2">
-                                <button type="submit" className="btn green-btn hg-60">Update <span><img src={arrow} alt="" /></span></button>
+                                <div className="col-lg-2 col-md-4">
+                                    <button type="submit" className="btn green-btn hg-60 mb-w-100">Update <span><img src={arrow} alt="" /></span></button>
+                                </div>
                             </div>
                         </div>
                         <h5>Change Password</h5>
                         <div className="row">
-                            <div className="col-md-4">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="form-group">
                                     <label className="form-label float">Old Password *</label>
                                     <div className="password">
@@ -45,7 +47,7 @@ const Security = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="form-group">
                                     <label className="form-label float">New Password *</label>
                                     <div className="password">
@@ -56,7 +58,7 @@ const Security = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="form-group">
                                     <label className="form-label float">Confirm Password *</label>
                                     <div className="password">
@@ -68,7 +70,7 @@ const Security = () => {
                                 </div>
                             </div>
                             <div className="col-md-12">
-                                <button type="submit" className="btn green-btn">Update <span><img src={arrow} alt="" /></span></button>
+                                <button type="submit" className="btn green-btn mb-w-100">Update <span><img src={arrow} alt="" /></span></button>
                             </div>
                         </div>
                     </div>

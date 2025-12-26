@@ -213,6 +213,13 @@ input.form-control:focus {
     &.btn-secondary {
         background: var(--color-gray);
         color: var(--color-7b);
+        &.style2 {
+            background: #BABABA;
+            color: var(--color-white);
+            img {
+                filter: brightness(100);
+            }
+        }
         &:hover {
             background: var(--color-52);
             border-color: transparent;
@@ -467,7 +474,7 @@ textarea {
 }
 select {
     &.form-control {
-        background: url('../images/arrow-down.svg') no-repeat;
+        background: url('../images/down-arrow.svg') no-repeat;
         background-size: auto;
         background-position: right 27px center;
         font-weight: 400;

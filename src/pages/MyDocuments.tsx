@@ -14,14 +14,14 @@ const MyDocuments = () => {
             <DashboardHeader toggleMenu={toggleMenu} />
             <div className="dashboard-body">
                 <DashboardLeft isOpen={isOpen} closeMenu={closeMenu} />
-                                <div className="dashboard-right">
+                <div className="dashboard-right">
                     <div className="dash-hdr">
                         <h3>My Documents</h3>
                         <p className="font-16">Upload your current Declarations Page to compare apples to apples.</p>
                     </div>
                     <div className="cmn-box h-auto p-40 my-documents mb-4">
                         <div className="row">
-                            <div className="col-md-4">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="form-group">
                                     <label className="form-label float">Select Type</label>
                                     <select name="" id="" className="form-control">
@@ -31,13 +31,13 @@ const MyDocuments = () => {
                                     </select>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="form-group">
                                     <label className="form-label float">Upload File</label>
                                     <input type="file" className="form-control" placeholder="" />
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-xl-4 col-md-12">
                                 <div className="form-group">
                                     <label className="form-label float">Name This Document</label>
                                     <input type="text" className="form-control" placeholder="Please enter name of this doc." />
@@ -77,7 +77,7 @@ const MyDocuments = () => {
                         <h3>Driver License Correction</h3>
                         <p>Need to correct or change your Driver License Number? Upload your updated license here. Support will review it, and once approved, your driver license number will be updated.</p>
                     </div>
-                    <div className="cmn-box h-auto p-40 my-documents mb-4">
+                    <div className="cmn-box h-auto p-40 my-documents">
                         <div className="side-group">
                             <div className="form-group mb-0">
                                 <label className="form-label float">Upload File</label>
