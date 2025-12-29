@@ -42,9 +42,9 @@
         min-width: 141px;
         height: 56px;
         padding: 0 24px;
-        background-color: #EEEEEE;
+        background-color: var(--color-white);
         border-radius: 40px;
-        color: #1C1C1C;
+        color: var(--color-1c);
         font-size: 16px;
         font-weight: 600;
         background-image: url('../images/down-arrow.svg');
@@ -71,7 +71,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        color: #1C1C1C;
+        color: var(--color-1c);
         font-size: 18px;
         font-weight: 600;
 
@@ -180,7 +180,7 @@
   h3 {
     font-size: 40px;
     font-weight: 700;
-    color: #1C1C1C;
+    color: var(--color-1c);
     margin-bottom: 8px;
 
     &.font-wight-600 {
@@ -196,11 +196,11 @@
   p {
     font-size: 24px;
     font-weight: 400;
-    color: #7B7B7B;
+    color: var(--color-7b);
     margin-bottom: 0;
     &.font-16 {
       font-size: 16px;
-      color: #4B4B4B;
+      color: var(--color-4b);
     }
   }
 }
@@ -308,7 +308,7 @@
   h5 {
     font-size: 18px;
     font-weight: 500;
-    color: #7B7B7B;
+    color: var(--color-7b);
     margin-bottom: 2px;
   }
 
@@ -416,7 +416,7 @@
       }
 
       p {
-        color: #7B7B7B;
+        color: var(--color-7b);
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 0;
@@ -435,7 +435,7 @@
     flex-basis: calc(100% - 122px);
 
     p {
-      color: #7B7B7B;
+      color: var(--color-7b);
       font-size: 14px;
       margin-bottom: 8px;
     }
@@ -478,15 +478,15 @@
   p {
     font-size: 16px;
     margin-bottom: 0;
-    color: #4B4B4B;
+    color: var(--color-4b);
 
     span {
       font-weight: 500;
-      color: #1C1C1C;
+      color: var(--color-1c);
     }
 
     a {
-      color: #4B4B4B;
+      color: var(--color-4b);
 
       &:hover {
         color: var(--color-blue);
@@ -507,10 +507,10 @@
   h3 {
     margin-bottom: 0;
     font-weight: 400;
-    color: #7B7B7B;
+    color: var(--color-7b);
 
     span {
-      color: #1C1C1C;
+      color: var(--color-1c);
       font-weight: 700;
     }
   }
@@ -619,7 +619,7 @@
 
   p {
     font-weight: 600;
-    color: #3D3D3D;
+    color: var(--color-3d);
     margin-bottom: 0;
   }
 }
@@ -714,7 +714,7 @@
   text-align: right;
 
   p {
-    color: #3D3D3D;
+    color: var(--color-3d);
     margin-bottom: 12px;
   }
 
@@ -853,7 +853,7 @@ p.form-txt.mt-45 {
   }
 
   p {
-    color: #7B7B7B;
+    color: var(--color-7b);
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 0;
@@ -919,7 +919,7 @@ p.form-txt.mt-45 {
 
 .family-circle-box-bottom {
   h5 {
-    color: #1C1C1C;
+    color: var(--color-1c);
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 0;
@@ -937,7 +937,7 @@ p.form-txt.mt-45 {
 
     &.pending {
       background: #D9DCEB;
-      color: #4B4B4B;
+      color: var(--color-4b);
     }
   }
 }
@@ -1020,12 +1020,12 @@ p.form-txt.mt-45 {
     font-weight: 500;
     font-size: 18px;
     margin-bottom: 0;
-    color: #7B7B7B;
+    color: var(--color-7b);
   }
 }
 
 .clr-3d {
-  color: #3D3D3D;
+  color: var(--color-3d);
   margin-bottom: 0;
 }
 
@@ -1114,11 +1114,11 @@ p.form-txt.mt-45 {
       margin-bottom: 0;
       font-size: 24px;
       font-weight: 600;
-      color: #1C1C1C;
+      color: var(--color-1c);
 
       span {
         margin-left: 6px;
-        color: #4B4B4B;
+        color: var(--color-4b);
         font-weight: 400;
       }
     }
@@ -1149,10 +1149,10 @@ p.form-txt.mt-45 {
     margin-bottom: 8px;
     font-size: 22px;
     font-weight: 500;
-    color: #4B4B4B;
+    color: var(--color-4b);
 
     a {
-      color: #4B4B4B;
+      color: var(--color-4b);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -1181,7 +1181,7 @@ p.form-txt.mt-45 {
   p {
     font-weight: 500;
     font-size: var(--font-24);
-    color: #1C1C1C;
+    color: var(--color-1c);
   }
 }
 
@@ -1231,7 +1231,7 @@ p.form-txt.mt-45 {
   .nav-link {
     font-size: var(--font-24);
     font-weight: 500;
-    color: #7B7B7B;
+    color: var(--color-7b);
     padding: 8px 12px;
   }
 }
@@ -1272,7 +1272,7 @@ p.form-txt.mt-45 {
   .vehicle-main {
     font-size: 22px;
     font-weight: 600;
-    color: #1C1C1C;
+    color: var(--color-1c);
     margin-bottom: 15px;
 
     span {
@@ -1297,7 +1297,7 @@ p.form-txt.mt-45 {
     p {
       font-size: 22px;
       font-weight: 600;
-      color: #1C1C1C;
+      color: var(--color-1c);
       margin-bottom: 6px;
 
       strong {
@@ -1306,7 +1306,7 @@ p.form-txt.mt-45 {
 
       span {
         display: block;
-        color: #4B4B4B;
+        color: var(--color-4b);
         font-size: 20px;
         font-weight: 400;
       }
@@ -1325,7 +1325,7 @@ p.form-txt.mt-45 {
 
 .note-box {
   label {
-    color: #1C1C1C;
+    color: var(--color-1c);
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 16px;
@@ -1349,7 +1349,7 @@ p.form-txt.mt-45 {
   margin-bottom: 10px;
   font-size: var(--font-24);
   font-weight: 500;
-  color: #7B7B7B;
+  color: var(--color-7b);
 }
 
 .font-wight-600 {
@@ -1369,7 +1369,7 @@ p.form-txt.mt-45 {
   right: -20px;
   background: url('../images/arrow-right-gray.svg') no-repeat;
   background-size:100% 100%;
-  color: #7B7B7B;
+  color: var(--color-7b);
   width: 13px;
   height: 13px;
   &::before {
@@ -1403,7 +1403,7 @@ p.form-txt.mt-45 {
   overflow-y: auto;
   p {
     margin-bottom: 0;
-    color: #3D3D3D;
+    color: var(--color-3d);
     font-size: 28px;
     font-weight: 600;
   }
@@ -1518,7 +1518,7 @@ p.form-txt.mt-45 {
     background-size: auto;
     background-position: right center;
     appearance: none;
-    color: #3D3D3D;
+    color: var(--color-3d);
     font-size: 32px;
     font-weight: 600;
     line-height: 1;
@@ -1527,7 +1527,7 @@ p.form-txt.mt-45 {
   }
   p {
     margin-bottom: 0;
-    color: #3D3D3D;
+    color: var(--color-3d);
     font-size: 32px;
     font-weight: 600;
     display: flex;
@@ -1787,7 +1787,7 @@ p.form-txt.mt-45 {
       }
   }
   .time {
-    color: #7B7B7B;
+    color: var(--color-7b);
     font-size: 16px;
     display: block;
     margin-top: 8px;
@@ -1868,7 +1868,7 @@ p.form-txt.mt-45 {
   .form-control[type="file"] {
     padding-top: 15px;
     padding-bottom: 15px;
-    color: #4B4B4B;
+    color: var(--color-4b);
   }
 }
 
@@ -1905,7 +1905,7 @@ p.form-txt.mt-45 {
 .s-hdr {
   font-size: 24px;
   font-weight: 400;
-  color: #1C1C1C;
+  color: var(--color-1c);
 }
 .shadow-box {
   box-shadow: 0px 0px 20px 0px #0000001A;
@@ -1932,12 +1932,12 @@ p.form-txt.mt-45 {
   h5 {
     font-size: 14px;
     font-weight: 600;
-    color: #1C1C1C;
+    color: var(--color-1c);
     margin-bottom: 5px;
   }
   p {
     font-size: 14px;
-    color: #4B4B4B;
+    color: var(--color-4b);
     margin-bottom: 0;
     font-weight: 400;
   }
@@ -1981,13 +1981,13 @@ p.form-txt.mt-45 {
     margin-bottom: 0;
   }
   h5 {
-    color: #1C1C1C;
+    color: var(--color-1c);
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 5px;
   }
   p {
-    color: #4B4B4B;
+    color: var(--color-4b);
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 0;
@@ -2023,12 +2023,12 @@ p.form-txt.mt-45 {
   margin-bottom: 24px;
   h4 {
     font-size: var(--font-24);
-    color: #1C1C1C;
+    color: var(--color-1c);
     font-weight: 400;
     margin-bottom: 0;
   }
   p {
-    color: #4B4B4B;
+    color: var(--color-4b);
     margin-bottom: 0;
     font-size: 16px;
   }
@@ -2048,7 +2048,7 @@ p.form-txt.mt-45 {
   p {
     font-size: 14px;
     font-weight: 600;
-    color: #1C1C1C;
+    color: var(--color-1c);
     margin-bottom: 0;
   }
   .form-label.float {
@@ -2435,6 +2435,13 @@ p.form-txt.mt-45 {
 .hg-60 {
   height: 50px;
 }
+  .chat-send .chat-send-form {
+    height: 80px;
+    padding: 10px 15px;
+  }
+  .vehicle-tab .nav-link {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -3097,6 +3104,12 @@ p.form-txt.mt-45 {
   margin-left: 5px;
   margin-right: 5px;
 }
+  .chat-screen .chat-left h3, .chat-right .chat-right-top .chat-right-wrapper .chat-right-txt h3 {
+    font-size: 20px;
+  }
+    .chat-right .chat-right-top .chat-right-wrapper .chat-right-txt h3 {
+    width: 150px;
+  }
 }
 
 @media only screen and (max-width: 575px) {
@@ -3325,6 +3338,7 @@ p.form-txt.mt-45 {
     width: 100%;
   }
 }
+
 }
 
 @media only screen and (max-width: 360px) {
@@ -3400,4 +3414,11 @@ p.form-txt.mt-45 {
     padding: 14px 9px;
   }
 }
+.chat-screen .chat-left h3, .chat-right .chat-right-top .chat-right-wrapper .chat-right-txt h3 {
+    font-size: 17px;
+  }
+    .chat-dropdown .dropdown-toggle {
+    width: 35px;
+    height: 35px;
+  }
 }
