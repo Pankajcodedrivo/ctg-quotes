@@ -4,6 +4,7 @@
 @use './login';
 @use './register';
 @use './dashboard';
+@use './modal';
 
 // start varibales
 :root {
@@ -53,6 +54,9 @@ body {
     line-height: 1.6;
     color: var(--color-4b);
     background: var(--color-white);
+    @media only screen and (max-width: 1680px) {
+        font-size: 15px;
+    }
    @media only screen and (max-width: 1499px) {
         font-size: 14px;
     }

@@ -34,6 +34,7 @@ import Notifications from "../pages/Notifications";
 import MyAccount from "../pages/MyAccount";
 import Security from "../pages/Security";
 import Settings from "../pages/Settings";
+import Modal from "../pages/Modal";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -82,6 +83,8 @@ export default function AppRoutes() {
         <Route path="/my-account" element={<MyAccount />} />
         <Route path="/security" element={<Security />} />
         <Route path="/settings" element={<Settings />} />
+        {/* modal */}
+        <Route path="/modal" element={<Modal />} />
       </Routes>
     </>
   );
