@@ -15,7 +15,6 @@ div:where(.swal2-container).swal2-noanimation {
     margin-left: auto;
     margin-right: auto;
     padding: 40px 0;
-
     &.width-lg {
         max-width: 986px;
         padding: 70px;
@@ -116,6 +115,11 @@ div:where(.swal2-container).swal2-noanimation {
             max-width: 530px;
             margin-left: auto;
             margin-right: auto;
+        }
+        &.frm-hdr {
+            font-weight: 500;
+            color: var(--color-1c);
+            text-align: left;
         }
     }
 
@@ -359,6 +363,9 @@ div:where(.swal2-container).swal2-noanimation {
 }
   .delete-icon {
     width: 50px;
+  }
+  .modal-box p.font-18 {
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 575px) {
