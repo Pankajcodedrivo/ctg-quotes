@@ -58,7 +58,7 @@ const MyAccount = () => {
                                 </div>
                             </div>
                             <div className="col-md-12">
-                                <button type="submit" className="btn green-btn">Update <span><img src={arrow} alt="" /></span></button>
+                                <button type="submit" className="btn green-btn mb-w-100">Update <span><img src={arrow} alt="" /></span></button>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const MyAccount = () => {
                                 </div>
                             </div>
                             <div className="col-md-12">
-                                <button type="submit" className="btn green-btn">Request Update Driver License <span><img src={arrow} alt="" /></span></button>
+                                <button type="submit" className="btn green-btn mb-w-100">Request Update Driver License <span><img src={arrow} alt="" /></span></button>
                             </div>
                         </div>
                     </div>

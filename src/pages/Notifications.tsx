@@ -20,7 +20,7 @@ const Notifications = () => {
                             <h3>Notifications</h3>
                             <p className="font-16">Stay updated with the latest alerts, reminders, and actions.</p>
                         </div>
-                        <button type="button" className="btn red-btn sm">Delete All <span><img src={arrow} alt="" /></span></button>
+                        <button type="button" className="btn red-btn sm mb-w-100">Delete All <span><img src={arrow} alt="" /></span></button>
                     </div>
                     <div className="notification-box-innr">
                         <NotificationBox />

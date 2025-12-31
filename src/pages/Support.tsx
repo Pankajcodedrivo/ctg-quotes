@@ -48,7 +48,7 @@ const Support = () => {
                                 </div>
                             </div>
                             <div className="col-md-12 text-center">
-                                <button type="submit" className="btn green-btn">Submit <span><img src={arrow} alt="" /></span></button>
+                                <button type="submit" className="btn green-btn mb-w-100">Submit <span><img src={arrow} alt="" /></span></button>
                             </div>
                         </div>
                     </div>
