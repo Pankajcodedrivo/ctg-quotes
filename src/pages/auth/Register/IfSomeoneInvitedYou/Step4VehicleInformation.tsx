@@ -16,7 +16,7 @@ const Step4 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                       <Step />
+                       <Step stepNumber={4} />
                        <div className="auth-form">
                             <div>
                                 <div className="mb-4 d-flex align-items-center justify-content-between">

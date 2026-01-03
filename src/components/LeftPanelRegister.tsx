@@ -2,7 +2,7 @@ import shape from "../assets/images/shape.png"
 type CardProps = {
   title: string;
   img:string;
-  subtitle:string;
+  subtitle?:string;
 };
 const LeftPanelRegister = ({ title, img, subtitle }: CardProps) => {
     return (

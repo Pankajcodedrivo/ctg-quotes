@@ -7,8 +7,8 @@ const Header = () => {
                 <div className="header-outr">
                     <Link to="/" className="logo-area"><img src={logo} alt="" /></Link>
                     <div className="hdr-btn-outr">
-                        <Link to="/" className="btn btn-outline">Login</Link>
-                        <Link to="/" className="btn red-btn">Create Profile</Link>
+                        <Link to="/login" className="btn btn-outline">Login</Link>
+                        <Link to="/step-1" className="btn red-btn">Create Profile</Link>
                     </div>
                 </div>
             </div>

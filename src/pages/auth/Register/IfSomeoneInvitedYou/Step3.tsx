@@ -20,7 +20,7 @@ const Step3 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                       <Step />
+                       <Step stepNumber={3} />
                        <div className="auth-form">
                             <div className="row g-3">
                                 <div className="col-xl-4 col-md-6 explore-otr">

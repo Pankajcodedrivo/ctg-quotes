@@ -1,86 +1,140 @@
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { FormikProvider, useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+
 import SubFooter from "../../../components/SubFooter";
 import SubHeader from "../../../components/SubHeader";
-import LeftPanelRegister from "../../../components/LeftPanelRegister";
-import Icon2 from "../../../assets/images/icon-2.svg"
-import rightArrow from "../../../assets/images/right-arrow.svg"
-import leftArrow from "../../../assets/images/left-arrow.svg"
 import Step from "../../../components/Step";
-const Step2 = () => {
-    return (
-        <section className="auth-wrapper">
-            <LeftPanelRegister title="Location" subtitle="" img={Icon2} />
-            <div className="right-panel register">
-                <div className="form-top">
-                    <SubHeader />
-                    <form action="">
-                       <Step />
-                       <div className="auth-form">
-                            <div>
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <div className="form-group">
-                                            <label className="form-label float">Where do you live? <span>(primary address)*</span></label>
-                                            <input type="text" className="form-control" placeholder="Enter Name" />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="form-group">
-                                            <label className="form-label float">Unit/Apt <span> (optional)</span></label>
-                                            <input type="text" className="form-control" placeholder="Enter" />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="form-group mb-0">
-                                            <label className="form-label float">City *</label>
-                                            <select name="" id="" className="form-control">
-                                                <option value="1" disabled>Select Status</option>
-                                                <option value="1">Select Status</option>
-                                                <option value="1">Select Status</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="form-group">
-                                            <label className="form-label float">State*</label>
-                                            <select name="" id="" className="form-control">
-                                                <option value="1" disabled>Select City</option>
-                                                <option value="1">Select City</option>
-                                                <option value="1">Select City</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="form-group">
-                                            <label className="form-label float">Zip Code *</label>
-                                            <select name="" id="" className="form-control">
-                                                <option value="1" disabled>Select City</option>
-                                                <option value="1">Select City</option>
-                                                <option value="1">Select City</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    {/* Location - non Texas */}
-                                    <div className="col-md-12">
-                                        <div className="form-group mb-0">
-                                            <textarea className="form-control" placeholder="Great news! We’re coming to your state soon. You’ve been added to our waitlist, and we’ll email you as soon as we’re live. Thanks for being part of the CTG community!"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="btn-flex mt-40">
-                            <button type="submit" className="btn btn-secondary"><span><img src={leftArrow} alt="" /></span> Back </button>
-                            <button type="submit" className="btn btn-primary">Save & Continue <span><img src={rightArrow} alt="" /></span></button>
-                            {/* Location - non Texas */}
-                            {/* <button type="submit" className="btn btn-primary">Notify me <span><img src={rightArrow} alt="" /></span></button> */}
-                        </div>
-                    </form>
+
+import FormInput from "../../../components/form/FormInput";
+import FormSelect from "../../../components/form/FormSelect";
+
+import { updateStepData, setStep } from "../../../store/registerSlice";
+import { usStateOptions } from "../../../constants/dropdownOptions";
+
+import Icon2 from "../../../assets/images/icon-2.svg";
+import rightArrow from "../../../assets/images/right-arrow.svg";
+import leftArrow from "../../../assets/images/left-arrow.svg";
+import { registerStep2Schema } from "../../../validation/validationSchema";
+import LeftPanelRegister from "../../../components/LeftPanelRegister";
+
+const Setup2 = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const step2Data = useSelector((state: any) => state.register.step2);
+
+  const formik = useFormik({
+    initialValues: step2Data,
+    validationSchema: registerStep2Schema,
+    onSubmit: (values) => {
+      dispatch(updateStepData({ step: "step2", data: values }));
+
+      if (values.state === "TX") {
+        dispatch(setStep(3));
+        navigate("/step-3");
+      }
+    },
+  });
+
+  const isTexas = formik.values.state === "TX";
+
+  return (
+    <section className="auth-wrapper">
+      <LeftPanelRegister title="Location" img={Icon2} />
+
+      <div className="right-panel register">
+        <SubHeader />
+
+        <FormikProvider value={formik}>
+          <form onSubmit={formik.handleSubmit}>
+            <Step stepNumber={2} />
+
+            <div className="auth-form">
+              <div className="row">
+                <div className="col-md-12">
+                  <FormInput
+                    name="address"
+                    label="Where do you live?"
+                    labelClass="float"
+                    required
+                  />
                 </div>
-                <SubFooter />
+
+                <div className="col-lg-6">
+                  <FormInput
+                    name="unit"
+                    label="Unit / Apt"
+                    labelClass="float"
+                  />
+                </div>
+
+                {/* CITY — text input */}
+                <div className="col-lg-6">
+                  <FormInput
+                    name="city"
+                    label="City"
+                    labelClass="float"
+                    required
+                  />
+                </div>
+
+                {/* STATE — CTG dropdown */}
+                <div className="col-lg-6">
+                  <FormSelect
+                    name="state"
+                    label="State"
+                    labelClass="float"
+                    options={usStateOptions}
+                    required
+                  />
+                </div>
+
+                <div className="col-lg-6">
+                  <FormInput
+                    name="zipCode"
+                    label="Zip Code"
+                    labelClass="float"
+                    required
+                  />
+                </div>
+
+                {!isTexas && formik.values.state && (
+                  <div className="col-md-12">
+                    <textarea
+                        readOnly
+                      className="form-control"
+                      disabled
+                      value="Great news! We’re coming to your state soon. You’ve been added to our waitlist, and we’ll email you as soon as we’re live."
+                    />
+                  </div>
+                )}
+              </div>
             </div>
-        </section>
-    )
+
+            <div className="btn-flex mt-40">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => {
+                  dispatch(setStep(1));
+                  navigate("/step-1");
+                }}
+              >
+                <span><img src={leftArrow} alt="" /></span> Back
+              </button>
+
+              <button type="submit" className="btn btn-primary">
+                {isTexas ? "Save & Continue" : "Notify Me"}
+                <span><img src={rightArrow} alt="" /></span>
+              </button>
+            </div>
+          </form>
+        </FormikProvider>
+
+        <SubFooter />
+      </div>
+    </section>
+  );
 };
 
-export default Step2;
+export default Setup2;
