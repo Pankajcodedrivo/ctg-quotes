@@ -24,6 +24,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MyProfileForm from "../pages/MyProfileForm";
 import FamilyCircle from "../pages/FamilyCircle";
+import ProtectedStepRoute from "./ProtectedStepRoute";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -42,13 +43,46 @@ export default function AppRoutes() {
         <Route path="/verify-security-code" element={<VerifySecurityCode />} />
         {/* register */}
         <Route path="/step-1" element={<Step1 />} />
-        <Route path="/step-2" element={<Step2 />} />
-        <Route path="/step-3" element={<Step3 />} />
-        <Route path="/step-4" element={<Step4 />} />
+
+        <Route
+          path="/step-2"
+          element={
+            <ProtectedStepRoute step={2}>
+              <Step2 />
+            </ProtectedStepRoute>
+          }
+        />
+
+        <Route
+          path="/step-3"
+          element={
+            <ProtectedStepRoute step={3}>
+              <Step3 />
+            </ProtectedStepRoute>
+          }
+        />
+
+        <Route
+          path="/step-4"
+          element={
+            <ProtectedStepRoute step={4}>
+              <Step4 />
+            </ProtectedStepRoute>
+          }
+        />
+
+        <Route
+          path="/step-5"
+          element={
+            <ProtectedStepRoute step={5}>
+              <Step5 />
+            </ProtectedStepRoute>
+          }
+        />
+
         <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
         <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
         <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />
-        <Route path="/step-5" element={<Step5 />} />
         <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
         {/* If Someone Invited You */}
         <Route path="/invited/step-1" element={<InvitedStep1 />} />

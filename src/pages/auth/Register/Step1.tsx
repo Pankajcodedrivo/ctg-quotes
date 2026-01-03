@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FormikProvider, useFormik } from "formik";
 import SubFooter from "../../../components/SubFooter";
@@ -17,7 +17,7 @@ import rightArrow from "../../../assets/images/right-arrow.svg";
 import check from "../../../assets/images/check.svg";
 import { genderOptions, maritalStatusOptions } from "../../../constants/dropdownOptions";
 import { sendOtpEmail, sendOtpPhone, verifyOtp } from "../../../service/register.service";
-import { showSuccessToast } from "../../../utils/toast/toast";
+import { showErrorToast, showSuccessToast } from "../../../utils/toast/toast";
 import { useNavigate } from "react-router-dom";
 type VerifyOtpPayload = {
   otpdata: string;
@@ -27,6 +27,7 @@ type VerifyOtpPayload = {
 const Setup1 = () => {
   const dispatch = useDispatch();
   const step1Data = useSelector((state: any) => state.register.step1);
+  
   const [showEmailOtp, setShowEmailOtp] = useState(false);
   const [showPhoneOtp, setShowPhoneOtp] = useState(false);
   const [emailCountdown, setEmailCountdown] = useState(0);
@@ -41,11 +42,21 @@ const Setup1 = () => {
     initialValues: step1Data,
     validationSchema: registerStep1Schema,
     onSubmit: (values) => {
+      if(!formik.values.emailVerified){
+        showErrorToast("Email must be verify");
+        return
+      }
+      if(!formik.values.phoneVerified){
+        showErrorToast("Phone must be verify");
+        return
+      }
       dispatch(updateStepData({ step: "step1", data: values }));
       dispatch(setStep(2));
       navigate("/step-2");
     },
   });
+  const prevEmailRef = useRef(formik.values.email);
+  const prevPhoneRef = useRef(formik.values.phone);
 
   // Initialize countdown from sessionStorage
   useEffect(() => {
@@ -92,17 +103,30 @@ const Setup1 = () => {
 
   // Reset OTP & button when input changes
   useEffect(() => {
-    setShowEmailOtp(false);
-    setEmailCountdown(0);
-    setEmailButtonText("Verify");
-    sessionStorage.removeItem(emailCountdownKey);
+    if (prevEmailRef.current !== formik.values.email) {
+      // Email changed, reset OTP
+      setShowEmailOtp(false);
+      setEmailCountdown(0);
+      setEmailButtonText("Verify");
+      sessionStorage.removeItem(emailCountdownKey);
+      formik.setFieldValue("emailVerified", false);
+
+      prevEmailRef.current = formik.values.email;
+    }
   }, [formik.values.email]);
 
   useEffect(() => {
-    setShowPhoneOtp(false);
-    setPhoneCountdown(0);
-    setPhoneButtonText("Verify");
-    sessionStorage.removeItem(phoneCountdownKey);
+    if (prevPhoneRef.current !== formik.values.phone) {
+      // Phone changed, reset OTP
+      setShowPhoneOtp(false);
+      setPhoneCountdown(0);
+      setPhoneButtonText("Verify");
+      sessionStorage.removeItem(phoneCountdownKey);
+      formik.setFieldValue("phoneVerified", false);
+
+      // Update previous phone
+      prevPhoneRef.current = formik.values.phone;
+    }
   }, [formik.values.phone]);
 
   const handleEmailVerify = async() => {
@@ -153,15 +177,11 @@ const Setup1 = () => {
       const resp = await verifyOtp(payload);
       if (resp) {
         showSuccessToast(resp.message);
-         dispatch(
-        updateStepData({
-          step: "step1",
-          data:
-            type === "email"
-              ? { emailVerified: true }
-              : { phoneVerified: true },
-        })
-      );
+        if (type === "email") {
+          formik.setFieldValue("emailVerified", true);
+        } else {
+          formik.setFieldValue("phoneVerified", true);
+        }
       }
     } catch (e) {
       console.error(e);
@@ -252,16 +272,16 @@ const Setup1 = () => {
                         labelClass="float"
                         wrapperClass="verify-innr"
                         required={true}
-                        buttonText={emailButtonText}
+                        buttonText={formik.values.emailVerified ? "Verified" : emailButtonText}
                         disableButton={
-                            emailCountdown > 0 || !formik.values.email || !!formik.errors.email
+                            formik.values.emailVerified || emailCountdown > 0 || !formik.values.email || !!formik.errors.email
                         }
                         onActionClick={handleEmailVerify}
                       />
                       {showEmailOtp && (
                         <div className="form-group">
-                          <label className="form-label">Security Code  {(step1Data.emailVerified)?<span className="ms-1"><img src={check} alt="" /></span>:''}</label>
-                          <OtpInput length={4} disabled={step1Data.emailVerified} onChange={(otp) =>  (otp.length>3)?checkVerifyOtp(otp,formik.values.email,'email'):null} />
+                          <label className="form-label">Security Code  {(formik.values.emailVerified)?<span className="ms-1"><img src={check} alt="" /></span>:''}</label>
+                          <OtpInput length={4} disabled={formik.values.emailVerified} onChange={(otp) =>  (otp.length>3)?checkVerifyOtp(otp,formik.values.email,'email'):null} />
                         </div>
                       )}
                     </div>
@@ -275,16 +295,16 @@ const Setup1 = () => {
                         wrapperClass="verify-innr"
                         labelClass="float"
                         required={true}
-                        buttonText={phoneButtonText}
+                        buttonText={formik.values.phoneVerified ? "Verified" : phoneButtonText}
                         disableButton={
-                            phoneCountdown > 0 || !formik.values.phone || !!formik.errors.phone
+                             formik.values.phoneVerified || phoneCountdown > 0 || !formik.values.phone || !!formik.errors.phone
                         }
                         onActionClick={handlePhoneVerify}
                       />
                       {showPhoneOtp && (
                         <div className="form-group">
-                          <label className="form-label">Security Code {(step1Data.phoneVerified)?<span className="ms-1"><img src={check} alt="" /></span>:''}</label>
-                          <OtpInput length={4} disabled={step1Data.phoneVerified} onChange={(otp) => (otp.length>3)? checkVerifyOtp(otp,formik.values.phone,'phone') : null} />
+                          <label className="form-label">Security Code {(formik.values.phoneVerified)?<span className="ms-1"><img src={check} alt="" /></span>:''}</label>
+                          <OtpInput length={4} disabled={formik.values.phoneVerified} onChange={(otp) => (otp.length>3)? checkVerifyOtp(otp,formik.values.phone,'phone') : null} />
                         </div>
                       )}
                     </div>

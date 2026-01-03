@@ -82,7 +82,7 @@ const FormInput = ({
         )}
       </div>
 
-      {meta.touched && meta.error && <div className="error-text">{meta.error}</div>}
+      {meta.touched && meta.error && <span className="text-danger">{meta.error}</span>}
     </div>
   );
 };
