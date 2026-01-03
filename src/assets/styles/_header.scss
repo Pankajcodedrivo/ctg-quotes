@@ -1,0 +1,89 @@
+.header {
+    padding: 30px 0;
+    background: var(--color-7bf);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    @media only screen and (max-width: 1680px) {
+        padding: 20px 0;
+    }
+}
+.header-outr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.hdr-btn-outr {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    .btn {
+        padding: 24px;
+        font-size: 20px;
+        @media only screen and (max-width: 1680px) {
+            padding: 20px;
+            font-size: 18px;
+        }
+        @media only screen and (max-width:767px) {
+            font-size: 16px;
+            padding: 17px 22px;
+        }
+        @media only screen and (max-width:574px) {
+            font-size: 14px;
+            padding: 14px 14px;
+        }
+    }
+}
+.logo-area {
+    max-width: 287px;
+    min-width: 287px;
+    display: block;
+    @media only screen and (max-width: 1680px) {
+        max-width: 230px;
+        min-width: 230px;
+    }
+}
+
+// responsive
+@media only screen and (max-width: 1199px) {
+     .logo-area {
+        max-width: 180px;
+        min-width: 180px;
+    }
+      .hdr-btn-outr .btn {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+.logo-area {
+    max-width: 140px;
+    min-width: 140px;
+  }
+   .header {
+    padding: 15px 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+     .logo-area {
+    max-width: 110px;
+    min-width: 110px;
+  }
+   .hdr-btn-outr .btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 360px) {
+      .logo-area {
+    max-width: 90px;
+    min-width: 90px;
+  }
+   .hdr-btn-outr .btn {
+    padding: 11px;
+    font-size: 13px;
+  }
+}
