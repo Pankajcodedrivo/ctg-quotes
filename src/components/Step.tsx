@@ -1,29 +1,34 @@
-import tick from "../assets/images/tick.svg"
-const Step = () => {
-    return (
-        <ul className="step-list">
-            <li className="active">
-                <span><img src={tick} alt="" /></span>
-                <p>Step 1</p>
-            </li>
-            <li className="completed">
-                <span><img src={tick} alt="" /></span>
-                <p>Step 2</p>
-            </li>
-            <li>
-                <span><img src={tick} alt="" /></span>
-                <p>Step 3</p>
-            </li>
-            <li>
-                <span><img src={tick} alt="" /></span>
-                <p>Step 4</p>
-            </li>
-            <li>
-                <span><img src={tick} alt="" /></span>
-                <p>Step 5</p>
-            </li>
-        </ul>
-    )
+import tick from "../assets/images/tick.svg";
+
+interface StepProps {
+  stepNumber: number;
+}
+
+const Step = ({ stepNumber } :StepProps) => {
+  const steps: number[] = [1, 2, 3, 4, 5];
+
+  return (
+    <ul className="step-list">
+      {steps.map((step) => {
+        let className = "";
+
+        if (step < stepNumber) {
+          className = "completed";
+        } else if (step === stepNumber) {
+          className = "active";
+        }
+
+        return (
+          <li key={step} className={className}>
+            <span>
+              <img src={tick} alt={`Step ${step}`} />
+            </span>
+            <p>Step {step}</p>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 export default Step;

@@ -16,7 +16,7 @@ const Step5 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                       <Step />
+                       <Step stepNumber={5}/>
                        <div className="auth-form">
                             <ul className="nav nav-tabs">
                                 <li className="nav-item">

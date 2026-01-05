@@ -14,7 +14,7 @@ const Step2 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                        <Step />
+                        <Step stepNumber={2}/>
                        <div className="auth-form">
                             <div>
                                 <div className="row">

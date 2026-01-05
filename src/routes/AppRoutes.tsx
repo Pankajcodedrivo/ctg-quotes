@@ -9,6 +9,7 @@ import ProfileCreationLoader from "../pages/auth/Register/ProfileCreationLoader"
 import Step1 from "../pages/auth/Register/Step1";
 import Step2 from "../pages/auth/Register/Step2";
 import Step3 from "../pages/auth/Register/Step3";
+import Step4 from "../pages/auth/Register/Step4";
 import AccountSetup1 from "../pages/auth/Register/Step4/AccountSetup1";
 import AccountSetup2 from "../pages/auth/Register/Step4/AccountSetup2";
 import AccountSetup3 from "../pages/auth/Register/Step4/AccountSetup3";
@@ -55,6 +56,7 @@ export default function AppRoutes() {
         <Route path="/step-1" element={<Step1 />} />
         <Route path="/step-2" element={<Step2 />} />
         <Route path="/step-3" element={<Step3 />} />
+        <Route path="/step-4" element={<Step4 />} />
         <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
         <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
         <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />

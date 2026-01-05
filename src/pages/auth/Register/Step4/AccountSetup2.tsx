@@ -19,7 +19,7 @@ const AccountSetup2 = () => {
                 <div className="form-top">
                     <SubHeader />
                     <form action="">
-                        <Step />
+                         <Step stepNumber={4} />
                         <div className="auth-form">
                             <div className="mb-4">
                                 <h4>Create Your Family Circle</h4>
