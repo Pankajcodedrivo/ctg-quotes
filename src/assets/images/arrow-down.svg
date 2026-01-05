@@ -1,3 +1,21 @@
 <svg width="10" height="5" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0L5 5L10 0H0Z" fill="#4B4B4B"/>
 </svg>
+background-color:transparent;
+    border: 0;
+    border-radius: 0;
+    border: 0;
+    color: #fff;
+    min-width: max-content;
+    appearance:none;
+    padding-right:20px;
+    background-image:url('https://cdn.shopify.com/s/files/1/1015/4278/9458/files/arrow-down.svg?v=1766224909')!important;
+    background-color:transparent!important;
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position:right center;
+    font-size: 18px;
+    font-weight: 500;
+    option {
+      color:#000;
+    }

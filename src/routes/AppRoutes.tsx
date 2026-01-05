@@ -25,6 +25,18 @@ import Header from "../components/Header";
 import MyProfileForm from "../pages/MyProfileForm";
 import FamilyCircle from "../pages/FamilyCircle";
 import ProtectedStepRoute from "./ProtectedStepRoute";
+import MyQuotes from "../pages/MyQuotes";
+import MyQuotesDetails from "../pages/MyQuotesDetails";
+import MyQuotesLoader from "../pages/MyQuotesLoader";
+import MyQuotesViewDetails from "../pages/MyQuotesViewDetails";
+import Messages from "../pages/Messages";
+import MyDocuments from "../pages/MyDocuments";
+import Support from "../pages/Support";
+import Notifications from "../pages/Notifications";
+import MyAccount from "../pages/MyAccount";
+import Security from "../pages/Security";
+import Settings from "../pages/Settings";
+import Modal from "../pages/Modal";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -93,8 +105,22 @@ export default function AppRoutes() {
         <Route path="/invited/step-5" element={<InvitedStep5 />} />
         {/* my profile */}
         <Route path="/my-profile" element={<MyProfile />} />
-        <Route path="/family-circle" element={<FamilyCircle />} />
         <Route path="/my-profile-form" element={<MyProfileForm />} />
+        <Route path="/family-circle" element={<FamilyCircle />} />
+        <Route path="/my-quotes" element={<MyQuotes />} />
+        <Route path="/my-quotes-details" element={<MyQuotesDetails />} />
+        <Route path="/my-quotes-loader" element={<MyQuotesLoader />} />
+        <Route path="/my-quotes-view-details" element={<MyQuotesViewDetails />} />
+        <Route path="/messages" element={<Messages />} />
+        {/* other screen */}
+        <Route path="/my-documents" element={<MyDocuments />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/my-account" element={<MyAccount />} />
+        <Route path="/security" element={<Security />} />
+        <Route path="/settings" element={<Settings />} />
+        {/* modal */}
+        <Route path="/modal" element={<Modal />} />
       </Routes>
     </>
   );

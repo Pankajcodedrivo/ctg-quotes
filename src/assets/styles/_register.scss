@@ -506,7 +506,7 @@ p.info-txt {
 p.sub-para {
     font-size: 16px;
     font-weight: 600;
-    color: #1C1C1C;
+    color: var(--color-1c);
     margin-bottom: 0;
     font-style: normal !important;
 
@@ -625,7 +625,7 @@ p.sub-para {
     margin-top: 20px;
 
     h6 {
-        color: #1C1C1C;
+        color: var(--color-1c);
         font-size: 14px;
         font-weight: 600;
         margin-bottom: 13px;
@@ -928,7 +928,7 @@ p.sub-para {
         margin-bottom: 0;
         font-style: normal;
         font-weight: 600;
-        color: #3D3D3D;
+        color: var(--color-3d);
     }
 }
 
@@ -936,7 +936,7 @@ p.sub-para {
     p {
         font-size: 14px;
         font-style: normal;
-        color: #3D3D3D;
+        color: var(--color-3d);
         @media only screen and (max-width:767px) {
             font-size: 13px;
         }
