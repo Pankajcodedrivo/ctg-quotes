@@ -38,8 +38,10 @@ export const memberValidationSchema = Yup.object({
     relationship: Yup.string().required("Relationship is required"),
     inviteType: Yup.string(),
     email: Yup.lazy((_, options) => {
+      console.log(options)
       const inviteType = options?.parent?.inviteType;
-      if (inviteType === "email") {
+      const method = options?.parent?.method;
+      if (inviteType === "email" && method==="invite") {
         return Yup.string()
           .required("Email is required")
           .email("Invalid email address");

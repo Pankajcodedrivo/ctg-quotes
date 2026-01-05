@@ -120,7 +120,7 @@ const Setup4Family = () => {
         </div>
 
         {/* ADD MEMBER BUTTON */}
-        {!showMemberForm && (
+        {!showMemberForm && formik.values.members && formik.values.members.length===0 && (
           <div
             className="add-membar"
             onClick={() => setShowMemberForm(true)}
@@ -173,7 +173,7 @@ const Setup4Family = () => {
                     formik.setFieldValue("newMember.inviteType", "email");
                   }}
                 >
-                  Invite
+                  Invite them to complete their own profile
                 </button>
 
                 <button
@@ -184,50 +184,59 @@ const Setup4Family = () => {
                     formik.setFieldValue("newMember.method", "manual");
                   }}
                 >
-                  Manual
+                  I will enter their information manually
                 </button>
               </div>
+              <div className="invite-method-content">
+                <div className="form-wrapper">
+                {/* INVITE OPTIONS */}
+                    {activeTab === "invite" && (
+                
+                    <>
+                      <div className="form-group">
+                        <label className="form-label">Select Invite Method:</label>
+                        <ul className="radio-list">
+                            <li>
+                                <label className="radio-container">Email
+                                    <input
+                                      type="radio"
+                                      checked={formik.values.newMember.inviteType === "email"}
+                                      onChange={() =>
+                                        formik.setFieldValue("newMember.inviteType", "email")
+                                      }
+                                    />
+                                    <span className="checkmark"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label className="radio-container">Phone
+                                    <input
+                                      type="radio"
+                                      checked={formik.values.newMember.inviteType === "phone"}
+                                      onChange={() =>
+                                        formik.setFieldValue("newMember.inviteType", "phone")
+                                      }
+                                    />
+                                    <span className="checkmark"></span>
+                                </label>
+                            </li>
+                        </ul>
+                      </div>
 
-              {/* INVITE OPTIONS */}
-              {activeTab === "invite" && (
-                <div className="invite-method-content mt-3">
-                  <label>Select Invite Method:</label>
-                  <div>
-                    <label>
-                      <input
-                        type="radio"
-                        checked={formik.values.newMember.inviteType === "email"}
-                        onChange={() =>
-                          formik.setFieldValue("newMember.inviteType", "email")
-                        }
-                      />
-                      Email
-                    </label>
-                    <label className="ml-3">
-                      <input
-                        type="radio"
-                        checked={formik.values.newMember.inviteType === "phone"}
-                        onChange={() =>
-                          formik.setFieldValue("newMember.inviteType", "phone")
-                        }
-                      />
-                      Phone
-                    </label>
-                  </div>
+                      {formik.values.newMember.inviteType === "email" && (
+                        <FormInput name="newMember.email" label="Email Address" />
+                      )}
 
-                  {formik.values.newMember.inviteType === "email" && (
-                    <FormInput name="newMember.email" label="Email Address" />
+                      {formik.values.newMember.inviteType === "phone" && (
+                        <FormInput name="newMember.phone" label="Phone Number" />
+                      )}
+                    </>
                   )}
-
-                  {formik.values.newMember.inviteType === "phone" && (
-                    <FormInput name="newMember.phone" label="Phone Number" />
-                  )}
+                  <button type="submit" className="btn btn-primary w-100 mt-3">
+                    {activeTab === "invite" ? "Send Invite" : "Add Member"}
+                  </button>
                 </div>
-              )}
-
-              <button type="submit" className="btn btn-primary w-100 mt-3">
-                {activeTab === "invite" ? "Send Invite" : "Add Member"}
-              </button>
+              </div>
             </div>
           </form>
         )}
