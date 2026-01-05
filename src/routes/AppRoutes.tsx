@@ -5,7 +5,6 @@ import VerifyEmail from "../pages/auth/Login/VerifyEmail"
 import VerifySecurityCode from "../pages/auth/Login/VerifySecurityCode"
 import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
-import ProfileCreationLoader from "../pages/auth/Register/ProfileCreationLoader";
 import Step1 from "../pages/auth/Register/Step1";
 import Step2 from "../pages/auth/Register/Step2";
 import Step3 from "../pages/auth/Register/Step3";
@@ -95,7 +94,6 @@ export default function AppRoutes() {
         <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
         <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
         <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />
-        <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
         {/* If Someone Invited You */}
         <Route path="/invited/step-1" element={<InvitedStep1 />} />
         <Route path="/invited/step-2" element={<InvitedStep2 />} />
