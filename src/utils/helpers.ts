@@ -24,43 +24,58 @@ export const signDisclaimers: string[] = [
 ];
 
 export const mapRegisterPayload = (state: any) => {
+  const payload: any = {};
+
   const { step1, step2, step3, step4 } = state;
 
-  return {
-    /* BASIC */
-    firstName: step1.firstName,
-    lastName: step1.lastName,
-    DOB: step1.dob,
-    gender: step1.gender,
-    maritalStatus: step1.maritalStatus,
+  // STEP1 – BASIC + CONTACT + AUTH
+  if (step1) {
+    payload.firstName = step1.firstName;
+    payload.lastName = step1.lastName;
+    payload.dob = step1.dob;
+    payload.gender = step1.gender;
+    payload.maritalStatus = step1.maritalStatus;
 
-    /* CONTACT */
-    email: step1.email,
-    emailVerified: step1.emailVerified,
-    phoneNumber: step1.phone,
-    phoneVerified: step1.phoneVerified,
+    payload.email = step1.email;
+    payload.emailVerified = step1.emailVerified;
+    payload.phone = step1.phone;
+    payload.phoneVerified = step1.phoneVerified;
 
-    /* AUTH */
-    password: step1.password,
+    payload.password = step1.password;
+  }
 
-    /* ADDRESS */
-    address: step2.address,
-    unit: step2.unit,
-    city: step2.city,
-    state: step2.state,
-    zipCode: step2.zipCode,
-    isTexas: step2.isTexas,
+  // STEP2 – ADDRESS
+  if (step2) {
+    payload.address = step2.address;
+    payload.unit = step2.unit;
+    payload.city = step2.city;
+    payload.state = step2.state;
+    payload.zipCode = step2.zipCode;
+    payload.isTexas = step2.isTexas;
+  }
 
-    /* PRODUCTS */
-    products: step3.products,
+  // STEP3 – PRODUCTS
+  if (step3) {
+    payload.products = step3.products || [];
+  }
 
-    /* MEMBERS */
-    members: step4.members.map((m: any) => ({
-      ...m,
-      canLogin: m.method === "invite",
-    })),
+  // STEP4 – MEMBERS + ANSWERS
+  if (step4) {
+     members: step4.members.map((m: any) => {
+      const member: any = {
+        firstName: m.firstName,
+        lastName: m.lastName,
+        relationship: m.relationship,
+        canLogin: m.method === "invite",
+      };
 
-    /* ANSWERS */
-    answers: step4.answers,
-  };
+      if (m.method === "invite" && m.email) member.email = m.email;
+      if (m.method === "invite" && m.phone) member.phone = m.phone;
+
+      return member;
+    }),
+    payload.answers = step4.answers || {};
+  }
+
+  return payload;
 };

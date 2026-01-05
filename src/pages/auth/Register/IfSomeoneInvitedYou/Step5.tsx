@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SubFooter from "../../../../components/SubFooter";
 import SubHeader from "../../../../components/SubHeader";
 import LeftPanelRegister from "../../../../components/LeftPanelRegister";
@@ -9,6 +8,7 @@ import edit from "../../../../assets/images/edit.svg"
 import drawIcon from "../../../../assets/images/draw-icon.svg"
 import sign from "../../../../assets/images/sign.png"
 const Step5 = () => {
+    
     return (
         <section className="auth-wrapper">
             <LeftPanelRegister title="Review & Consent" subtitle="" img={Icon6} />

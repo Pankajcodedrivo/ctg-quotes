@@ -17,6 +17,11 @@ export const verifyOtp = catchAsync(async (payload: any) => {
 });
 
 export const register = catchAsync(async (payload: any) => {
-  const data = await httpsCall.post(`/qoutes/register`,payload);
+  const data = await httpsCall.post(`/auth/qoutes/register`,payload);
+  return data;
+});
+
+export const notifyAdmin = catchAsync(async (payload: any) => {
+  const data = await httpsCall.post(`/auth/nofity-admin`,payload);
   return data;
 });
