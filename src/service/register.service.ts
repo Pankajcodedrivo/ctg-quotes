@@ -15,3 +15,8 @@ export const verifyOtp = catchAsync(async (payload: any) => {
   const data = await httpsCall.post(`/auth/verify-otp`,payload);
   return data;
 });
+
+export const register = catchAsync(async (payload: any) => {
+  const data = await httpsCall.post(`/qoutes/register`,payload);
+  return data;
+});

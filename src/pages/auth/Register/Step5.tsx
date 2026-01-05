@@ -9,13 +9,19 @@ import Disclaimers from "../../../components/step5/Disclaimers";
 import SignConsent from "../../../components/step5/SignConsent";
 import { useState } from "react";
 import { showErrorToast } from "../../../utils/toast/toast";
+import { register } from "../../../service/register.service";
+import { useSelector } from "react-redux";
+import { mapRegisterPayload } from "../../../utils/helpers";
+import type { RootState } from "../../../store/store";
 
 const Step5 = () => {
     const [allDisclaimersChecked, setAllDisclaimersChecked] = useState(false);
+    const registerState = useSelector((state: RootState) => state.register);
     const [signConsentValid, setSignConsentValid] = useState(false);
     const [signatureData, setSignatureData] = useState<string>("");
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async(e: React.FormEvent) => {
         e.preventDefault();
+        
 
         if (!allDisclaimersChecked) {
             showErrorToast("Please agree to all disclaimers");
@@ -26,14 +32,11 @@ const Step5 = () => {
             showErrorToast("Please complete signature and consent");
             return;
         }
-
-        // ✅ Everything valid
-        console.log({
+        const payload: any = {
+            ...mapRegisterPayload(registerState),
             signatureData,
-            allDisclaimersChecked,
-            signConsentValid,
-        });
-
+        };
+        await register(payload);
         // API call / next step here
     };
     return (
