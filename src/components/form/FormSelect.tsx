@@ -47,7 +47,7 @@ const FormSelect = ({
       </select>
 
       {meta.touched && meta.error && (
-        <small className="text-danger">{meta.error}</small>
+        <span className="text-danger">{meta.error}</span>
       )}
     </div>
   );

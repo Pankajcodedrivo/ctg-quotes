@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Login from "../pages/auth/Login/Login";
-import VerifyEmail from "../pages/auth/Login/VerifyEmail"
-import VerifySecurityCode from "../pages/auth/Login/VerifySecurityCode"
+import VerifyEmail from "../pages/auth/forget-password/VerifyEmail"
+import VerifySecurityCode from "../pages/auth/forget-password/VerifySecurityCode"
+import ResetPassword from "../pages/auth/forget-password/ResetPassword";
 import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
 import ProfileCreationLoader from "../pages/auth/Register/ProfileCreationLoader";
@@ -32,10 +33,12 @@ import Messages from "../pages/Messages";
 import MyDocuments from "../pages/MyDocuments";
 import Support from "../pages/Support";
 import Notifications from "../pages/Notifications";
-import MyAccount from "../pages/MyAccount";
+import MyAccount from "../pages/myAccount/MyAccount";
 import Security from "../pages/Security";
 import Settings from "../pages/Settings";
 import Modal from "../pages/Modal";
+import ProtectedStepRoute from "./ProtectedStepRoute";
+import AuthLayout from "../layout/AuthLayout";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -52,15 +55,49 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/verify-security-code" element={<VerifySecurityCode />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         {/* register */}
         <Route path="/step-1" element={<Step1 />} />
-        <Route path="/step-2" element={<Step2 />} />
-        <Route path="/step-3" element={<Step3 />} />
-        <Route path="/step-4" element={<Step4 />} />
+
+        <Route
+          path="/step-2"
+          element={
+            <ProtectedStepRoute step={2}>
+              <Step2 />
+            </ProtectedStepRoute>
+          }
+        />
+
+        <Route
+          path="/step-3"
+          element={
+            <ProtectedStepRoute step={3}>
+              <Step3 />
+            </ProtectedStepRoute>
+          }
+        />
+
+        <Route
+          path="/step-4"
+          element={
+            <ProtectedStepRoute step={4}>
+              <Step4 />
+            </ProtectedStepRoute>
+          }
+        />
+
+        <Route
+          path="/step-5"
+          element={
+            <ProtectedStepRoute step={5}>
+              <Step5 />
+            </ProtectedStepRoute>
+          }
+        />
+
         <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
         <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
         <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />
-        <Route path="/step-5" element={<Step5 />} />
         <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
         {/* If Someone Invited You */}
         <Route path="/invited/step-1" element={<InvitedStep1 />} />
@@ -69,6 +106,8 @@ export default function AppRoutes() {
         <Route path="/invited/step-vehicle-edit" element={<Step4VehicleEdit />} />
         <Route path="/invited/step-vehicle-information" element={<Step4VehicleInformation />} />
         <Route path="/invited/step-5" element={<InvitedStep5 />} />
+
+      <Route element={<AuthLayout />}>
         {/* my profile */}
         <Route path="/my-profile" element={<MyProfile />} />
         <Route path="/my-profile-form" element={<MyProfileForm />} />
@@ -87,6 +126,7 @@ export default function AppRoutes() {
         <Route path="/settings" element={<Settings />} />
         {/* modal */}
         <Route path="/modal" element={<Modal />} />
+      </Route>
       </Routes>
     </>
   );

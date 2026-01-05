@@ -17,6 +17,7 @@ export const productQuestions = [
     type: "select",
     label: "How many vehicles will be on your policy?",
     options: createNumberOptions(9, true), 
+    required: true,
   },
 
   /* PROPERTY INSURANCE */
@@ -27,6 +28,7 @@ export const productQuestions = [
     type: "select",
     label: "What type of property will you be quoting?",
     options: propertyTypeOptions,
+    required: true,
   },
 
   /* RENTERS INSURANCE */
@@ -37,6 +39,7 @@ export const productQuestions = [
     type: "select",
     label: "What type of property will you be quoting?",
     options: rentersTypeOptions,
+    required: true,
   },
 
   /* LIFE INSURANCE */
@@ -47,6 +50,7 @@ export const productQuestions = [
     type: "select",
     label: "Life Insurance Type",
     options: lifeInsuranceOptions,
+    required: true,
   },
 
   /* BUSINESS INSURANCE */
@@ -57,6 +61,7 @@ export const productQuestions = [
     type: "select",
     label: "Business Insurance Type",
     options: businessInsuranceOptions,
+    required: true,
   },
 
   /* RECREATIONAL VEHICLES */
@@ -64,8 +69,9 @@ export const productQuestions = [
     id: "recreational_type",
     product: "recreational",
     context: "register",
-    type: "checkbox",
+    type: "select",
     label: "What type of recreational vehicles do you need a quote on?",
     options: recreationalVehicleOptions,
+    required: true,
   },
 ];

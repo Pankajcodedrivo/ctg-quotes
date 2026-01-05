@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import banImg from "../assets/images/ban-1.png"
 import banImg1 from "../assets/images/ban-2.png"

@@ -1,17 +1,21 @@
-import { Link } from "react-router-dom";
+import { FormikProvider } from "formik";
 import rightArrow from "../../../assets/images/right-arrow.svg"
 import LeftPanel from "../../../components/LeftPanel";
 import SubFooter from "../../../components/SubFooter";
 import SubHeader from "../../../components/SubHeader";
+import { useForgotPass } from "./useForgotPass";
+import FormInput from "../../../components/form/FormInput";
 
 const Login = () => {
+    const { forgotPassFormik } = useForgotPass();
     return (
         <section className="auth-wrapper">
             <LeftPanel title="An investment in knowledge pays the best interest." subtitle="Benjamin Franklin" />
             <div className="right-panel">
                 <div className="form-top">
                     <SubHeader />
-                    <form action="">
+                    <FormikProvider value={forgotPassFormik}>
+                    <form onSubmit={forgotPassFormik.handleSubmit}>
                         <div className="auth-form">
                             <div className="mb-40">
                                 <h4>Security Code</h4>
@@ -19,17 +23,25 @@ const Login = () => {
                             </div>
                             <div className="row">
                                 <div className="col-lg-6">
-                                    <div className="form-group mb-0">
-                                        <label className="form-label float">Email Address *</label>
-                                        <input type="email" className="form-control" id="email" placeholder="Enter Email" name="email" />
-                                    </div>
+                                     <FormInput
+                                        name="email"
+                                        type="email"
+                                        placeholder="Enter Email"
+                                        label="Email Address"
+                                        labelClass="float"
+                                        wrapperClass="verify-innr"
+                                        required
+                                        />
                                 </div>
                             </div>
                             <div className="text-center mt-40">
-                                <Link to="/" className="btn btn-primary">Send Security Code <span><img src={rightArrow} alt="" /></span></Link>
+                                <button type="submit" className="btn btn-primary">
+                                    Send Security Code <span><img src={rightArrow} alt="" /></span>
+                                </button>
                             </div>
                         </div>
                     </form>
+                    </FormikProvider>
                 </div>
                 <SubFooter />
             </div>

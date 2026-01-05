@@ -16,7 +16,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="footer-bottom">
-                <p>© 2025 <span>CTG Quotes</span>. All rights reserved.</p>
+                <p>© 2026 <span>CTG Quotes</span>. All rights reserved.</p>
                 <ul>
                     <li>
                         <Link to="/">Privacy Policy</Link>       
