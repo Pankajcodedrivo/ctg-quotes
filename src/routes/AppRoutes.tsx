@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Login from "../pages/auth/Login/Login";
-import VerifyEmail from "../pages/auth/Login/VerifyEmail"
-import VerifySecurityCode from "../pages/auth/Login/VerifySecurityCode"
+import VerifyEmail from "../pages/auth/forget-password/VerifyEmail"
+import VerifySecurityCode from "../pages/auth/forget-password/VerifySecurityCode"
+import ResetPassword from "../pages/auth/forget-password/ResetPassword";
 import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
 import Step1 from "../pages/auth/Register/Step1";
@@ -32,10 +33,11 @@ import Messages from "../pages/Messages";
 import MyDocuments from "../pages/MyDocuments";
 import Support from "../pages/Support";
 import Notifications from "../pages/Notifications";
-import MyAccount from "../pages/MyAccount";
+import MyAccount from "../pages/myAccount/MyAccount";
 import Security from "../pages/Security";
 import Settings from "../pages/Settings";
 import Modal from "../pages/Modal";
+import AuthLayout from "../layout/AuthLayout";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -52,6 +54,7 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/verify-security-code" element={<VerifySecurityCode />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         {/* register */}
         <Route path="/step-1" element={<Step1 />} />
 
@@ -101,6 +104,8 @@ export default function AppRoutes() {
         <Route path="/invited/step-vehicle-edit" element={<Step4VehicleEdit />} />
         <Route path="/invited/step-vehicle-information" element={<Step4VehicleInformation />} />
         <Route path="/invited/step-5" element={<InvitedStep5 />} />
+
+      <Route element={<AuthLayout />}>
         {/* my profile */}
         <Route path="/my-profile" element={<MyProfile />} />
         <Route path="/my-profile-form" element={<MyProfileForm />} />
@@ -119,6 +124,7 @@ export default function AppRoutes() {
         <Route path="/settings" element={<Settings />} />
         {/* modal */}
         <Route path="/modal" element={<Modal />} />
+      </Route>
       </Routes>
     </>
   );

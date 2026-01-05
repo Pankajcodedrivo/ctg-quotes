@@ -1,79 +1,119 @@
 import axios from "axios";
-import { showErrorToast } from "../utils/toast/toast";
-// Request Interceptor
-axios.interceptors.request.use(async (config) => {
+import toast from "react-hot-toast";
+import { logOut } from "../store/authSlice";
+import { store } from "../store/store";
+
+/* =======================
+   REQUEST INTERCEPTOR
+======================= */
+axios.interceptors.request.use((config: any) => {
   config.baseURL = import.meta.env.VITE_API_BASE_URL;
 
-  // Get the access token and refresh token from sessionStorage
-  const token = sessionStorage.getItem("access_token") ?? "";
+  const token = localStorage.getItem("access_token");
 
-  // If access token is available, add it to the request header
   if (token) {
-    config.headers["authorization"] = `Bearer ${token}`;
-  } else if (axios.defaults.headers.common["authorization"]) {
-    config.headers["authorization"] = axios.defaults.headers.common["authorization"];
-  }  
+    config.headers.authorization = `Bearer ${token}`;
+  }
+
   return config;
 });
 
-// Response Interceptor
-let retryCount = 0;
-const MAX_RETRIES = 3;
+/* =======================
+   RESPONSE INTERCEPTOR
+======================= */
 
-let isLoggingOut = false;
+let retryCount = 0;
+const MAX_RETRIES = 1;
+let isRefreshing = false;
 
 axios.interceptors.response.use(
-  async (response) => {
+  // ✅ SUCCESS HANDLER
+  (response) => {
+    const message =
+      response?.data?.message || response?.data?.responseMessage;
+
+    if (message) {
+      toast.success(message);
+    }
+
+    retryCount = 0;
     return response;
   },
+
+  // ❌ ERROR HANDLER
   async (error) => {
-    const tokenExpired = error.response?.data?.tokenExpired || false;
-    const isUnauthorized = error.response?.status === 401;
+    const { response, config } = error;
+    const status = response?.status;
 
-    if (tokenExpired && isUnauthorized && retryCount < MAX_RETRIES) {
-      const refreshToken = sessionStorage.getItem("refresh_token");
+    const message =
+      response?.data?.responseMessage ||
+      response?.data?.message ||
+      "Something went wrong";
 
-      if (refreshToken) {
-        try {
-          const refreshResponse = await axios.post("admin/refresh-tokens", {
-            token: refreshToken,
-          });
+    // 🔐 TOKEN EXPIRED → REFRESH
+    if (
+      status === 401 &&
+      response?.data?.tokenExpired &&
+      retryCount < MAX_RETRIES &&
+      !isRefreshing
+    ) {
+      isRefreshing = true;
+      retryCount++;
 
-          const { access, refresh } = refreshResponse.data.tokens || {};
-          if (access && refresh) {
-            sessionStorage.setItem("access_token", access);
-            sessionStorage.setItem("refresh_token", refresh);
+      try {
+        const refreshToken = localStorage.getItem("refresh_token");
 
-            error.config.headers["Authorization"] = `Bearer ${access}`;
-            retryCount++;
-            return axios(error.config); // Retry the original request
-          }
-        } catch (refreshError) {
-          showErrorToast("Session expired. Please login again.");
-          retryCount = 0; // Reset the count on failure
-        }
-      } else {
-        showErrorToast("No refresh token found. Please login again.");
-      }
-      if ( isUnauthorized && !isLoggingOut ) {
-        isLoggingOut = true;
+        if (!refreshToken) throw new Error("No refresh token");
+
+        const refreshResponse = await axios.post("/admin/refresh-tokens", {
+          token: refreshToken,
+        });
+
+        const { access, refresh } = refreshResponse.data.tokens || {};
+
+        if (!access || !refresh) throw new Error("Invalid refresh response");
+
+        localStorage.setItem("access_token", access);
+        localStorage.setItem("refresh_token", refresh);
+
+        config.headers.authorization = `Bearer ${access}`;
+        isRefreshing = false;
+
+        return axios(config);
+      } catch {
+        isRefreshing = false;
+        store.dispatch(logOut());
+        toast.error("Session expired. Please login again.");
+        return Promise.reject(error);
       }
     }
-    showErrorToast(error.response?.data?.message || "Something went wrong.");
-    retryCount = 0; // Reset retry count
+
+    // 🚪 FORCE LOGOUT CASES
+    if (
+      status === 401 ||
+      message === "Token blacklisted" ||
+      message === "Please authenticate"
+    ) {
+      store.dispatch(logOut());
+    }
+
+    // ❌ SHOW ERROR TOAST (ONCE)
+    toast.error(message);
+
+    retryCount = 0;
     return Promise.reject(error);
   }
 );
 
-
-// Exporting axios call methods
+/* =======================
+   EXPORT WRAPPER
+======================= */
 const httpsCall = {
   get: axios.get,
   post: axios.post,
   put: axios.put,
   delete: axios.delete,
   patch: axios.patch,
-  interceptors: axios.interceptors,
 };
 
 export default httpsCall;

@@ -11,37 +11,48 @@ import dIcon5 from "../assets/images/d-icon-5.svg"
 import dIcon6 from "../assets/images/d-icon-6.svg"
 import dIcon7 from "../assets/images/d-icon-7.svg"
 import close from "../assets/images/cross.svg"
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../store/authSlice";
+
 const DashboardLeft: React.FC<DashboardLeftProps> = ({ isOpen, closeMenu }) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    function logoutHandler() {
+        dispatch(logOut());
+        localStorage.clear();
+        navigate("/login");
+    }
     return (
         <div className={`dashboard-left ${isOpen ? "open" : ""}`}>
             <button className="close-icon" onClick={closeMenu}><img src={close} alt="" /></button>
             <ul className="mb-5">
-                <li>
-                    <Link to="/">
+                <li className="active">
+                    <Link to="/my-quotes">
                         <span><img src={dIcon1} alt="" /></span>
                         My Quotes
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/family-circle">
                         <span><img src={dIcon2} alt="" /></span>
                         Family Circle
                     </Link>
                 </li>
-                <li className="active">
-                    <Link to="/">
+                <li>
+                    <Link to="/my-profile">
                         <span><img src={dIcon3} alt="" /></span>
                         My Profile
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/messages">
                         <span><img src={dIcon4} alt="" /></span>
                         Messages <em>3</em>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/my-documents">
                         <span><img src={dIcon5} alt="" /></span>
                         My Documents
                     </Link>
@@ -49,13 +60,13 @@ const DashboardLeft: React.FC<DashboardLeftProps> = ({ isOpen, closeMenu }) => {
             </ul>
             <ul>
                 <li>
-                    <Link to="/">
+                    <Link to="/support">
                         <span><img src={dIcon6} alt="" /></span>
                         Support
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/" onClick={logoutHandler}>
                         <span><img src={dIcon7} alt="" /></span>
                         Logout
                     </Link>

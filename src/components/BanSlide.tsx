@@ -12,7 +12,7 @@ const BanSlide = ({ heading, desc, img }: CardProps) => {
                     <div className="banner-content">
                         <h1>{heading}</h1>
                         <p>{desc}</p>
-                        <Link to="/" className="btn red-btn lg">Get Started Today</Link>
+                        <Link to="/step-1" className="btn red-btn lg">Get Started Today</Link>
                     </div>
                 </div>
                 <div className="col-md-6">

@@ -11,16 +11,18 @@ import {
   persistStore,
 } from "redux-persist";
 
-import register from "./registerSlice"; // <-- make sure this path is correct
+import register from "./registerSlice";
+import auth from "./authSlice";
 
 const persistConfig = {
   key: "ctgquotes",
   storage,
-  whitelist: ["register"],
+  whitelist: ["register", "auth"],
 };
 
 const rootReducer = combineReducers({
   register,
+  auth
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

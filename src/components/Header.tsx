@@ -5,7 +5,7 @@ const Header = () => {
         <div className="header">
             <div className="container">
                 <div className="header-outr">
-                    <Link to="/" className="logo-area"><img src={logo} alt="" /></Link>
+                    <Link to="." className="logo-area"><img src={logo} alt="" /></Link>
                     <div className="hdr-btn-outr">
                         <Link to="/login" className="btn btn-outline">Login</Link>
                         <Link to="/step-1" className="btn red-btn">Create Profile</Link>
