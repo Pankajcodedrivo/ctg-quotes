@@ -35,6 +35,15 @@ export const verifyOtp = catchAsync(async (payload: any) => {
   return data;
 });
 
+export const register = catchAsync(async (payload: any) => {
+  const data = await httpsCall.post(`/auth/qoutes/register`,payload);
+  return data;
+});
+
+export const notifyAdmin = catchAsync(async (payload: any) => {
+  const data = await httpsCall.post(`/auth/nofity-admin`,payload);
+  return data;
+});
 export const logInApi = catchAsync(async (values: LoginData) => {
   try {
     const data = await httpsCall.post(`/auth/login`, values);

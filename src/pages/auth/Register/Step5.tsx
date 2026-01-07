@@ -9,14 +9,26 @@ import Disclaimers from "../../../components/step5/Disclaimers";
 import SignConsent from "../../../components/step5/SignConsent";
 import { useState } from "react";
 import { showErrorToast } from "../../../utils/toast/toast";
+import { register } from "../../../service/register.service";
+import { useDispatch, useSelector } from "react-redux";
+import { mapRegisterPayload } from "../../../utils/helpers";
+import type { RootState } from "../../../store/store";
+import ProfileCreationLoader from "./ProfileCreationLoader";
+import { useNavigate } from "react-router-dom";
+import { resetRegister } from "../../../store/registerSlice";
 
 const Step5 = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [allDisclaimersChecked, setAllDisclaimersChecked] = useState(false);
+    const registerState = useSelector((state: RootState) => state.register);
     const [signConsentValid, setSignConsentValid] = useState(false);
     const [signatureData, setSignatureData] = useState<string>("");
-    const handleSubmit = (e: React.FormEvent) => {
+    const [loading, setLoading] = useState(false);
+    const [apiDone, setApiDone] = useState(false);
+    const handleSubmit = async(e: React.FormEvent) => {
         e.preventDefault();
-
+        
         if (!allDisclaimersChecked) {
             showErrorToast("Please agree to all disclaimers");
             return;
@@ -26,16 +38,32 @@ const Step5 = () => {
             showErrorToast("Please complete signature and consent");
             return;
         }
-
-        // ✅ Everything valid
-        console.log({
-            signatureData,
-            allDisclaimersChecked,
-            signConsentValid,
-        });
-
+        try {
+            setLoading(true);
+            const payload: any = {
+                ...mapRegisterPayload(registerState),
+                signatureData,
+            };
+            await register(payload);
+            setApiDone(true);
+            dispatch(resetRegister());
+        } catch (err) {
+            console.log(err);
+            setLoading(false);
+        }
         // API call / next step here
     };
+    if (loading) {
+        return (
+            <ProfileCreationLoader
+                apiDone={apiDone}
+                onComplete={() => {
+                    // redirect ONLY after messages finish
+                    navigate("/profile");
+                }}
+            />
+        );
+    }
     return (
         <section className="auth-wrapper">
         <LeftPanelRegister title="Review & Consent" subtitle="" img={Icon6} />

@@ -6,7 +6,6 @@ import VerifySecurityCode from "../pages/auth/forget-password/VerifySecurityCode
 import ResetPassword from "../pages/auth/forget-password/ResetPassword";
 import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
-import ProfileCreationLoader from "../pages/auth/Register/ProfileCreationLoader";
 import Step1 from "../pages/auth/Register/Step1";
 import Step2 from "../pages/auth/Register/Step2";
 import Step3 from "../pages/auth/Register/Step3";
@@ -25,6 +24,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MyProfileForm from "../pages/MyProfileForm";
 import FamilyCircle from "../pages/FamilyCircle";
+import ProtectedStepRoute from "./ProtectedStepRoute";
 import MyQuotes from "../pages/MyQuotes";
 import MyQuotesDetails from "../pages/MyQuotesDetails";
 import MyQuotesLoader from "../pages/MyQuotesLoader";
@@ -37,7 +37,6 @@ import MyAccount from "../pages/myAccount/MyAccount";
 import Security from "../pages/Security";
 import Settings from "../pages/Settings";
 import Modal from "../pages/Modal";
-import ProtectedStepRoute from "./ProtectedStepRoute";
 import AuthLayout from "../layout/AuthLayout";
 
 export default function AppRoutes() {
@@ -98,7 +97,6 @@ export default function AppRoutes() {
         <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
         <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
         <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />
-        <Route path="/profile-creation-loader" element={<ProfileCreationLoader />} />
         {/* If Someone Invited You */}
         <Route path="/invited/step-1" element={<InvitedStep1 />} />
         <Route path="/invited/step-2" element={<InvitedStep2 />} />

@@ -17,21 +17,25 @@ import rightArrow from "../../../assets/images/right-arrow.svg";
 import leftArrow from "../../../assets/images/left-arrow.svg";
 import { registerStep2Schema } from "../../../validation/validationSchema";
 import LeftPanelRegister from "../../../components/LeftPanelRegister";
+import { notifyAdmin } from "../../../service/register.service";
+import { mapRegisterPayload } from "../../../utils/helpers";
 
 const Setup2 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const step2Data = useSelector((state: any) => state.register.step2);
-
+  const registerData = useSelector((state: any) => state.register);
+  const step2Data = registerData.step2;
   const formik = useFormik({
     initialValues: step2Data,
     validationSchema: registerStep2Schema,
-    onSubmit: (values) => {
+    onSubmit: async(values) => {
       dispatch(updateStepData({ step: "step2", data: values }));
-
       if (values.state === "TX") {
         dispatch(setStep(3));
         navigate("/step-3");
+      }else{
+        const payload = mapRegisterPayload(registerData)
+        await notifyAdmin(payload);
       }
     },
   });

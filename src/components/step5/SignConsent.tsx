@@ -73,14 +73,16 @@ const SignConsent = ({ onChange }: Props) => {
             <span><img src={drawIcon} alt="" /></span> Draw Your Signature
           </h6>
 
-          <div className="draw-box" style={{ border: "1px solid #ccc", height: 150 }}>
+          <div className="draw-box">
             <SignatureCanvas
               ref={sigPadRef}
               penColor="black"
               onEnd={handleEnd}
               canvasProps={{
-                className: "sigCanvas w-100",
-                height: 150,
+                className: "sigCanvas",
+                width: 500,      // fixed width
+                height: 150,     // fixed height
+                style: { border: "1px solid #ccc", display: "block" },
               }}
             />
           </div>
