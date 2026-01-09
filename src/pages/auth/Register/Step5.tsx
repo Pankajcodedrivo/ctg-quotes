@@ -59,7 +59,7 @@ const Step5 = () => {
                 apiDone={apiDone}
                 onComplete={() => {
                     // redirect ONLY after messages finish
-                    navigate("/profile");
+                    navigate("/login");
                 }}
             />
         );

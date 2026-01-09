@@ -17,5 +17,5 @@ export const isStep3Complete = (step3: any) => {
 };
 
 export const isStep4Complete = (step4: any) => {
-  return step4.members && step4.members.length === 0;
+  return (step4.members && step4.members.length >= 0) || step4.members.length === 0;
 };
