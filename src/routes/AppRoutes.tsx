@@ -10,9 +10,6 @@ import Step1 from "../pages/auth/Register/Step1";
 import Step2 from "../pages/auth/Register/Step2";
 import Step3 from "../pages/auth/Register/Step3";
 import Step4 from "../pages/auth/Register/Step4";
-import AccountSetup1 from "../pages/auth/Register/Step4/AccountSetup1";
-import AccountSetup2 from "../pages/auth/Register/Step4/AccountSetup2";
-import AccountSetup3 from "../pages/auth/Register/Step4/AccountSetup3";
 import Step5 from "../pages/auth/Register/Step5";
 import InvitedStep1 from "../pages/auth/Register/IfSomeoneInvitedYou/Step1";
 import InvitedStep2 from "../pages/auth/Register/IfSomeoneInvitedYou/Step2";
@@ -31,10 +28,10 @@ import MyQuotesLoader from "../pages/MyQuotesLoader";
 import MyQuotesViewDetails from "../pages/MyQuotesViewDetails";
 import Messages from "../pages/Messages";
 import MyDocuments from "../pages/MyDocuments";
-import Support from "../pages/Support";
+import Support from "../pages/support/Support";
 import Notifications from "../pages/Notifications";
 import MyAccount from "../pages/myAccount/MyAccount";
-import Security from "../pages/Security";
+import Security from "../pages/security/Security";
 import Settings from "../pages/Settings";
 import Modal from "../pages/Modal";
 import AuthLayout from "../layout/AuthLayout";
@@ -93,10 +90,6 @@ export default function AppRoutes() {
             </ProtectedStepRoute>
           }
         />
-
-        <Route path="/step-4/account-setup-1" element={<AccountSetup1 />} />
-        <Route path="/step-4/account-setup-2" element={<AccountSetup2 />} />
-        <Route path="/step-4/account-setup-3" element={<AccountSetup3 />} />
         {/* If Someone Invited You */}
         <Route path="/invited/step-1" element={<InvitedStep1 />} />
         <Route path="/invited/step-2" element={<InvitedStep2 />} />

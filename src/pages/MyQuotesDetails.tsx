@@ -7,7 +7,7 @@ import arrowRight from "../assets/images/arrow-right.svg";
 import progLogo from "../assets/images/prog-logo.svg";
 import email from "../assets/images/email.svg";
 import tel from "../assets/images/tel.svg";
-import arrowRightGray from "../assets/images/arrow-right-gray.svg";
+// import arrowRightGray from "../assets/images/arrow-right-gray.svg";
 
 const MyQuotesDetails = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -84,7 +84,7 @@ const MyQuotesDetails = () => {
                             </div>
 
                             <div className="text-end details-right">
-                                <p className="mb-3">Quoted on: October 10, 2025 By Michael Davis</p>
+                                <p className="mb-3">Quoted on: October 10, 2026 By Michael Davis</p>
                                 <div className="btn-wrap">
                                     <button className="btn btn-outline-primary">Message Agency</button>
                                     <button className="btn btn-outline-danger">Decline</button>
@@ -117,7 +117,7 @@ const MyQuotesDetails = () => {
                         <div className="tab-content">
                             <div id="tab-1" className="tab-pane active">
                                 <div className="card-wrapper">
-                                    <p className="vehicle-main"><span>Vehicle 1:</span> 2025 Honda CR-V</p>
+                                    <p className="vehicle-main"><span>Vehicle 1:</span> 2026 Honda CR-V</p>
                                     <ul className="coverage-grid">
                                         <li>
                                             <p><strong>Liability Coverage</strong><span>30/60/25</span></p>

@@ -42,7 +42,7 @@ const MyQuotesViewDetails = () => {
                             </div>
 
                             <div className="text-end details-right">
-                                <p className="mb-3">Quoted on: October 10, 2025 By Michael Davis</p>
+                                <p className="mb-3">Quoted on: October 10, 2026 By Michael Davis</p>
                                 <div className="btn-wrap">
                                     <button className="btn btn-outline-primary">Message Agency</button>
                                     <button className="btn btn-outline-danger">Decline</button>

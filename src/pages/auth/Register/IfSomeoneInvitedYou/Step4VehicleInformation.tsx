@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SubFooter from "../../../../components/SubFooter";
 import SubHeader from "../../../../components/SubHeader";
 import LeftPanelRegister from "../../../../components/LeftPanelRegister";
@@ -6,8 +5,6 @@ import Step from "../../../../components/Step";
 import rightArrow from "../../../../assets/images/right-arrow.svg"
 import leftArrow from "../../../../assets/images/left-arrow.svg"
 import Icon4 from "../../../../assets/images/icon-4.svg"
-import deleteIcon from "../../../../assets/images/delete.svg"
-import editIcon from "../../../../assets/images/edit-icon.svg"
 const Step4 = () => {
     return (
         <section className="auth-wrapper">

@@ -63,7 +63,7 @@ const ProfileCreationLoader = ({ apiDone, onComplete }: Props) => {
         <div className="bottom-footer">
           <div className="sub-footer text-center">
             <p className="copiright">
-              © 2025 <span>CTG Quotes.</span> All rights reserved.{" "}
+              © 2026 <span>CTG Quotes.</span> All rights reserved.{" "}
               <Link to="/">Privacy Policy</Link> |{" "}
               <Link to="/">Terms & Conditions</Link>
             </p>

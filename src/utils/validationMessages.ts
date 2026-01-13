@@ -2,6 +2,8 @@ export const VALIDATION_MESSAGES = {
   EMAIL_REQUIRED: "Email address is required",
   EMAIL_INVALID: "Please enter a valid email address",
 
+  NEW_PASSWORD_REQUIRED: "New Password is required",
+  OLD_PASSWORD_REQUIRED: "Old Password is required",
   PASSWORD_REQUIRED: "Password field is required",
   CONFIRM_PASSWORD_REQUIRED: "Confirm Password field is required",
   PASSWORD_MIN: "Must be 8 or more than 8 characters",
@@ -12,4 +14,6 @@ export const VALIDATION_MESSAGES = {
   LAST_NAME: "Last name is required",
   DOB: "DOB is required",
   PHONE: "Phone number is required",
+
+  FULL_NAME: "Full name is required",
 };

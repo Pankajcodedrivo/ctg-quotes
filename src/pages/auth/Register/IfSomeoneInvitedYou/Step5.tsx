@@ -127,7 +127,7 @@ const Step5 = () => {
                                         <div className="row">
                                             <div className="col-xl-4 mb-4">
                                                 <h6 className="sub-hdr">What is the year of your vehicle?</h6>
-                                                <p className="sub-para">2025</p>
+                                                <p className="sub-para"></p>
                                             </div>
                                             <div className="col-xl-4 mb-4">
                                                 <h6 className="sub-hdr">What is the make of your vehicle?</h6>

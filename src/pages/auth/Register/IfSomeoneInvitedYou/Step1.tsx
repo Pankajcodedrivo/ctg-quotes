@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SubFooter from "../../../../components/SubFooter";
 import SubHeader from "../../../../components/SubHeader";
 import LeftPanelRegister from "../../../../components/LeftPanelRegister";

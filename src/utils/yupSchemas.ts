@@ -7,6 +7,20 @@ export const emailSchema = yup
   .email(VALIDATION_MESSAGES.EMAIL_INVALID)
   .required(VALIDATION_MESSAGES.EMAIL_REQUIRED);
 
+export const oldPasswordSchema = yup
+  .string()
+  .trim()
+  .min(8, VALIDATION_MESSAGES.PASSWORD_MIN)
+  .matches(/\w/, VALIDATION_MESSAGES.PASSWORD_INVALID)
+  .required(VALIDATION_MESSAGES.OLD_PASSWORD_REQUIRED);
+
+export const newPasswordSchema = yup
+  .string()
+  .trim()
+  .min(8, VALIDATION_MESSAGES.PASSWORD_MIN)
+  .matches(/\w/, VALIDATION_MESSAGES.PASSWORD_INVALID)
+  .required(VALIDATION_MESSAGES.NEW_PASSWORD_REQUIRED);
+
 export const passwordSchema = yup
   .string()
   .trim()
@@ -28,6 +42,20 @@ export const confirmPasswordSchema = yup
         .oneOf([yup.ref("password")], VALIDATION_MESSAGES.PASSWORD_MATCH),
   });
 
+  // Confirm change password validation
+export const confirmChangePasswordSchema = yup
+  .string()
+  .trim()
+  .required(VALIDATION_MESSAGES.CONFIRM_PASSWORD_REQUIRED)
+  .when("newPassword", {
+    is: (password: string) => !!password,
+    then: (schema) =>
+      schema
+        .min(8, VALIDATION_MESSAGES.PASSWORD_MIN)
+        .matches(/\w/, VALIDATION_MESSAGES.PASSWORD_INVALID)
+        .oneOf([yup.ref("newPassword")], VALIDATION_MESSAGES.PASSWORD_MATCH),
+  });
+
 // My account validation
 export const fnameSchema = yup
   .string()
@@ -44,3 +72,8 @@ export const dobSchema = yup
 export const phoneSchema = yup
   .string()
   .required(VALIDATION_MESSAGES.PHONE);
+
+// support validation
+export const fullNameSchema = yup.string()
+  .trim()
+  .required(VALIDATION_MESSAGES.FULL_NAME);

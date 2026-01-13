@@ -1,8 +1,11 @@
 type CardProps = {
   title: string;
   desc: string;
+  value: boolean;
+  onToggle: (newValue: boolean) => void;
 };
-const SettingsBox = ({title,desc}:CardProps) => {
+
+const SettingsBox = ({ title, desc, value, onToggle }: CardProps) => {
     return (
         <div className="settings-box-innr">
             <div>
@@ -10,7 +13,11 @@ const SettingsBox = ({title,desc}:CardProps) => {
                 <p>{desc}</p>
             </div>
             <label className="yes-no-switch sm">
-                <input type="checkbox" />
+                 <input
+                    type="checkbox"
+                    checked={value}
+                    onChange={(e) => onToggle(e.target.checked)}
+                    />
                 <span className="track">
                     <span className="thumb"></span>
                 </span>
